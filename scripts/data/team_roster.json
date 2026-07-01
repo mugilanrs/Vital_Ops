@@ -1,0 +1,2747 @@
+{
+  "teams": {
+    "Cloud Ops": {
+      "team_id": "TEAM-01",
+      "service_instances": [
+        "Network/Infrastructure",
+        "Microsoft 365"
+      ],
+      "members": [
+        {
+          "name": "Omkar Joshi",
+          "email": "omkar.joshi@vitalops-insurance.com",
+          "seniority": "Junior",
+          "specializations": [
+            "Network/Infrastructure",
+            "Microsoft 365"
+          ],
+          "status": "Available",
+          "current_load": 3
+        },
+        {
+          "name": "Kavita Gupta",
+          "email": "kavita.gupta@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "Network/Infrastructure",
+            "Microsoft 365"
+          ],
+          "status": "Busy",
+          "current_load": 1
+        },
+        {
+          "name": "Indira Lal",
+          "email": "indira.lal@vitalops-insurance.com",
+          "seniority": "Junior",
+          "specializations": [
+            "Network/Infrastructure",
+            "Microsoft 365"
+          ],
+          "status": "Available",
+          "current_load": 3
+        },
+        {
+          "name": "Abhishek Srinivasan",
+          "email": "abhishek.srinivasan@vitalops-insurance.com",
+          "seniority": "Junior",
+          "specializations": [
+            "Network/Infrastructure",
+            "Microsoft 365"
+          ],
+          "status": "Available",
+          "current_load": 8
+        },
+        {
+          "name": "Tushar Shah",
+          "email": "tushar.shah@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Network/Infrastructure",
+            "Microsoft 365"
+          ],
+          "status": "Available",
+          "current_load": 0
+        },
+        {
+          "name": "Meera Malhotra",
+          "email": "meera.malhotra@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Network/Infrastructure",
+            "Microsoft 365"
+          ],
+          "status": "Available",
+          "current_load": 3
+        },
+        {
+          "name": "Sharath Gupta",
+          "email": "sharath.gupta@vitalops-insurance.com",
+          "seniority": "Junior",
+          "specializations": [
+            "Network/Infrastructure",
+            "Microsoft 365"
+          ],
+          "status": "Available",
+          "current_load": 5
+        },
+        {
+          "name": "Kishore Agarwal",
+          "email": "kishore.agarwal@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "Network/Infrastructure",
+            "Microsoft 365"
+          ],
+          "status": "Busy",
+          "current_load": 8
+        },
+        {
+          "name": "Jayesh Jain",
+          "email": "jayesh.jain@vitalops-insurance.com",
+          "seniority": "Junior",
+          "specializations": [
+            "Network/Infrastructure",
+            "Microsoft 365"
+          ],
+          "status": "Available",
+          "current_load": 5
+        },
+        {
+          "name": "Ganesh Verma",
+          "email": "ganesh.verma@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "Network/Infrastructure",
+            "Microsoft 365"
+          ],
+          "status": "Available",
+          "current_load": 3
+        },
+        {
+          "name": "Rekha Nair",
+          "email": "rekha.nair@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "Network/Infrastructure",
+            "Microsoft 365"
+          ],
+          "status": "Busy",
+          "current_load": 6
+        },
+        {
+          "name": "Ramya Nambiar",
+          "email": "ramya.nambiar@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "Network/Infrastructure",
+            "Microsoft 365"
+          ],
+          "status": "Available",
+          "current_load": 5
+        },
+        {
+          "name": "Shreya Pillai",
+          "email": "shreya.pillai@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "Network/Infrastructure",
+            "Microsoft 365"
+          ],
+          "status": "Busy",
+          "current_load": 1
+        },
+        {
+          "name": "Kishore Chatterjee",
+          "email": "kishore.chatterjee@vitalops-insurance.com",
+          "seniority": "Junior",
+          "specializations": [
+            "Network/Infrastructure",
+            "Microsoft 365"
+          ],
+          "status": "Busy",
+          "current_load": 2
+        },
+        {
+          "name": "Vinod Jain",
+          "email": "vinod.jain@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Network/Infrastructure",
+            "Microsoft 365"
+          ],
+          "status": "On Leave",
+          "current_load": 0
+        }
+      ]
+    },
+    "Salesforce Admin": {
+      "team_id": "TEAM-02",
+      "service_instances": [
+        "Salesforce"
+      ],
+      "members": [
+        {
+          "name": "Wasim Venkatesh",
+          "email": "wasim.venkatesh@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Salesforce"
+          ],
+          "status": "Available",
+          "current_load": 0
+        },
+        {
+          "name": "Pradeep Kumar",
+          "email": "pradeep.kumar@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "Salesforce"
+          ],
+          "status": "Available",
+          "current_load": 1
+        },
+        {
+          "name": "Pankaj Yadav",
+          "email": "pankaj.yadav@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "Salesforce"
+          ],
+          "status": "Available",
+          "current_load": 7
+        },
+        {
+          "name": "Suresh Deshpande",
+          "email": "suresh.deshpande@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Salesforce"
+          ],
+          "status": "Available",
+          "current_load": 3
+        },
+        {
+          "name": "Devika Venkatesh",
+          "email": "devika.venkatesh@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Salesforce"
+          ],
+          "status": "Busy",
+          "current_load": 6
+        },
+        {
+          "name": "Hemant Kapoor",
+          "email": "hemant.kapoor@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Salesforce"
+          ],
+          "status": "On Leave",
+          "current_load": 0
+        },
+        {
+          "name": "Kavita Saxena",
+          "email": "kavita.saxena@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Salesforce"
+          ],
+          "status": "Busy",
+          "current_load": 1
+        },
+        {
+          "name": "Manish Chatterjee",
+          "email": "manish.chatterjee@vitalops-insurance.com",
+          "seniority": "Junior",
+          "specializations": [
+            "Salesforce"
+          ],
+          "status": "Busy",
+          "current_load": 1
+        },
+        {
+          "name": "Sunil Jain",
+          "email": "sunil.jain@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Salesforce"
+          ],
+          "status": "Available",
+          "current_load": 4
+        },
+        {
+          "name": "Darshan Sharma",
+          "email": "darshan.sharma@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "Salesforce"
+          ],
+          "status": "Available",
+          "current_load": 8
+        },
+        {
+          "name": "Rakesh Deshpande",
+          "email": "rakesh.deshpande@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Salesforce"
+          ],
+          "status": "Available",
+          "current_load": 2
+        },
+        {
+          "name": "Vinay Sharma",
+          "email": "vinay.sharma@vitalops-insurance.com",
+          "seniority": "Lead",
+          "specializations": [
+            "Salesforce"
+          ],
+          "status": "Busy",
+          "current_load": 4
+        }
+      ]
+    },
+    "API Gateway Team": {
+      "team_id": "TEAM-03",
+      "service_instances": [
+        "WSO2 API Gateway"
+      ],
+      "members": [
+        {
+          "name": "Abhishek Desai",
+          "email": "abhishek.desai@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "WSO2 API Gateway"
+          ],
+          "status": "Available",
+          "current_load": 4
+        },
+        {
+          "name": "Omkar Saxena",
+          "email": "omkar.saxena@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "WSO2 API Gateway"
+          ],
+          "status": "Available",
+          "current_load": 2
+        },
+        {
+          "name": "Chandni Thakur",
+          "email": "chandni.thakur@vitalops-insurance.com",
+          "seniority": "Lead",
+          "specializations": [
+            "WSO2 API Gateway"
+          ],
+          "status": "Available",
+          "current_load": 7
+        },
+        {
+          "name": "Amit Joshi",
+          "email": "amit.joshi@vitalops-insurance.com",
+          "seniority": "Lead",
+          "specializations": [
+            "WSO2 API Gateway"
+          ],
+          "status": "Busy",
+          "current_load": 4
+        },
+        {
+          "name": "Pranav Singh",
+          "email": "pranav.singh@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "WSO2 API Gateway"
+          ],
+          "status": "Available",
+          "current_load": 1
+        },
+        {
+          "name": "Dhruv Rajan",
+          "email": "dhruv.rajan@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "WSO2 API Gateway"
+          ],
+          "status": "On Leave",
+          "current_load": 0
+        },
+        {
+          "name": "Bharat Iyer",
+          "email": "bharat.iyer@vitalops-insurance.com",
+          "seniority": "Junior",
+          "specializations": [
+            "WSO2 API Gateway"
+          ],
+          "status": "Available",
+          "current_load": 8
+        },
+        {
+          "name": "Mohan Agarwal",
+          "email": "mohan.agarwal@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "WSO2 API Gateway"
+          ],
+          "status": "Busy",
+          "current_load": 3
+        },
+        {
+          "name": "Chandni Malhotra",
+          "email": "chandni.malhotra@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "WSO2 API Gateway"
+          ],
+          "status": "Available",
+          "current_load": 5
+        },
+        {
+          "name": "Vidya Thakur",
+          "email": "vidya.thakur@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "WSO2 API Gateway"
+          ],
+          "status": "Available",
+          "current_load": 1
+        }
+      ]
+    },
+    "Claims Platform": {
+      "team_id": "TEAM-04",
+      "service_instances": [
+        "Guidewire ClaimCenter"
+      ],
+      "members": [
+        {
+          "name": "Sharath Patel",
+          "email": "sharath.patel@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Guidewire ClaimCenter"
+          ],
+          "status": "Available",
+          "current_load": 3
+        },
+        {
+          "name": "Aarav Reddy",
+          "email": "aarav.reddy@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "Guidewire ClaimCenter"
+          ],
+          "status": "Available",
+          "current_load": 1
+        },
+        {
+          "name": "Anil Goyal",
+          "email": "anil.goyal@vitalops-insurance.com",
+          "seniority": "Junior",
+          "specializations": [
+            "Guidewire ClaimCenter"
+          ],
+          "status": "Available",
+          "current_load": 7
+        },
+        {
+          "name": "Pankaj Unnikrishnan",
+          "email": "pankaj.unnikrishnan@vitalops-insurance.com",
+          "seniority": "Junior",
+          "specializations": [
+            "Guidewire ClaimCenter"
+          ],
+          "status": "On Leave",
+          "current_load": 0
+        },
+        {
+          "name": "Ganesh Yadav",
+          "email": "ganesh.yadav@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Guidewire ClaimCenter"
+          ],
+          "status": "Busy",
+          "current_load": 6
+        },
+        {
+          "name": "Neha Gupta",
+          "email": "neha.gupta@vitalops-insurance.com",
+          "seniority": "Junior",
+          "specializations": [
+            "Guidewire ClaimCenter"
+          ],
+          "status": "Available",
+          "current_load": 6
+        },
+        {
+          "name": "Tanvi Nambiar",
+          "email": "tanvi.nambiar@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "Guidewire ClaimCenter"
+          ],
+          "status": "Available",
+          "current_load": 1
+        },
+        {
+          "name": "Bhavna Kapoor",
+          "email": "bhavna.kapoor@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "Guidewire ClaimCenter"
+          ],
+          "status": "Busy",
+          "current_load": 1
+        },
+        {
+          "name": "Priya Verma",
+          "email": "priya.verma@vitalops-insurance.com",
+          "seniority": "Junior",
+          "specializations": [
+            "Guidewire ClaimCenter"
+          ],
+          "status": "Available",
+          "current_load": 6
+        },
+        {
+          "name": "Naveen Bhat",
+          "email": "naveen.bhat@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Guidewire ClaimCenter"
+          ],
+          "status": "Busy",
+          "current_load": 1
+        },
+        {
+          "name": "Vidya Venkatesh",
+          "email": "vidya.venkatesh@vitalops-insurance.com",
+          "seniority": "Junior",
+          "specializations": [
+            "Guidewire ClaimCenter"
+          ],
+          "status": "Busy",
+          "current_load": 8
+        },
+        {
+          "name": "Aditi Nair",
+          "email": "aditi.nair@vitalops-insurance.com",
+          "seniority": "Lead",
+          "specializations": [
+            "Guidewire ClaimCenter"
+          ],
+          "status": "Busy",
+          "current_load": 2
+        },
+        {
+          "name": "Tanvi Rajan",
+          "email": "tanvi.rajan@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Guidewire ClaimCenter"
+          ],
+          "status": "Busy",
+          "current_load": 0
+        },
+        {
+          "name": "Mohan Jain",
+          "email": "mohan.jain@vitalops-insurance.com",
+          "seniority": "Junior",
+          "specializations": [
+            "Guidewire ClaimCenter"
+          ],
+          "status": "Available",
+          "current_load": 7
+        }
+      ]
+    },
+    "Policy Platform": {
+      "team_id": "TEAM-05",
+      "service_instances": [
+        "Guidewire PolicyCenter"
+      ],
+      "members": [
+        {
+          "name": "Ravi Lal",
+          "email": "ravi.lal@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "Guidewire PolicyCenter"
+          ],
+          "status": "Busy",
+          "current_load": 8
+        },
+        {
+          "name": "Sahil Mukherjee",
+          "email": "sahil.mukherjee@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Guidewire PolicyCenter"
+          ],
+          "status": "Available",
+          "current_load": 3
+        },
+        {
+          "name": "Bhavna Trivedi",
+          "email": "bhavna.trivedi@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "Guidewire PolicyCenter"
+          ],
+          "status": "Available",
+          "current_load": 5
+        },
+        {
+          "name": "Bhavna Singh",
+          "email": "bhavna.singh@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Guidewire PolicyCenter"
+          ],
+          "status": "Available",
+          "current_load": 8
+        },
+        {
+          "name": "Meera Singh",
+          "email": "meera.singh@vitalops-insurance.com",
+          "seniority": "Lead",
+          "specializations": [
+            "Guidewire PolicyCenter"
+          ],
+          "status": "Available",
+          "current_load": 2
+        },
+        {
+          "name": "Chetan Srinivasan",
+          "email": "chetan.srinivasan@vitalops-insurance.com",
+          "seniority": "Junior",
+          "specializations": [
+            "Guidewire PolicyCenter"
+          ],
+          "status": "Busy",
+          "current_load": 6
+        },
+        {
+          "name": "Jayesh Yadav",
+          "email": "jayesh.yadav@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Guidewire PolicyCenter"
+          ],
+          "status": "Available",
+          "current_load": 1
+        },
+        {
+          "name": "Tushar Ghosh",
+          "email": "tushar.ghosh@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Guidewire PolicyCenter"
+          ],
+          "status": "Available",
+          "current_load": 4
+        },
+        {
+          "name": "Pallavi Ghosh",
+          "email": "pallavi.ghosh@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "Guidewire PolicyCenter"
+          ],
+          "status": "Available",
+          "current_load": 6
+        },
+        {
+          "name": "Karan Ghosh",
+          "email": "karan.ghosh@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "Guidewire PolicyCenter"
+          ],
+          "status": "Available",
+          "current_load": 1
+        },
+        {
+          "name": "Aditi Nambiar",
+          "email": "aditi.nambiar@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "Guidewire PolicyCenter"
+          ],
+          "status": "Available",
+          "current_load": 1
+        },
+        {
+          "name": "Deepa Unnikrishnan",
+          "email": "deepa.unnikrishnan@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Guidewire PolicyCenter"
+          ],
+          "status": "Available",
+          "current_load": 5
+        },
+        {
+          "name": "Chetan Mishra",
+          "email": "chetan.mishra@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Guidewire PolicyCenter"
+          ],
+          "status": "Available",
+          "current_load": 8
+        },
+        {
+          "name": "Yasmin Das",
+          "email": "yasmin.das@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "Guidewire PolicyCenter"
+          ],
+          "status": "On Leave",
+          "current_load": 0
+        }
+      ]
+    },
+    "Duck Creek Engineering": {
+      "team_id": "TEAM-06",
+      "service_instances": [
+        "Duck Creek"
+      ],
+      "members": [
+        {
+          "name": "Raghu Thakur",
+          "email": "raghu.thakur@vitalops-insurance.com",
+          "seniority": "Junior",
+          "specializations": [
+            "Duck Creek"
+          ],
+          "status": "Busy",
+          "current_load": 4
+        },
+        {
+          "name": "Sahil Gupta",
+          "email": "sahil.gupta@vitalops-insurance.com",
+          "seniority": "Lead",
+          "specializations": [
+            "Duck Creek"
+          ],
+          "status": "Available",
+          "current_load": 1
+        },
+        {
+          "name": "Harini Venkatesh",
+          "email": "harini.venkatesh@vitalops-insurance.com",
+          "seniority": "Junior",
+          "specializations": [
+            "Duck Creek"
+          ],
+          "status": "Available",
+          "current_load": 3
+        },
+        {
+          "name": "Zeeshan Goyal",
+          "email": "zeeshan.goyal@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Duck Creek"
+          ],
+          "status": "Busy",
+          "current_load": 4
+        },
+        {
+          "name": "Abhishek Rajan",
+          "email": "abhishek.rajan@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Duck Creek"
+          ],
+          "status": "On Leave",
+          "current_load": 0
+        },
+        {
+          "name": "Arjun Nair",
+          "email": "arjun.nair@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "Duck Creek"
+          ],
+          "status": "Busy",
+          "current_load": 0
+        },
+        {
+          "name": "Aarav Goyal",
+          "email": "aarav.goyal@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "Duck Creek"
+          ],
+          "status": "Busy",
+          "current_load": 4
+        },
+        {
+          "name": "Meera Mehta",
+          "email": "meera.mehta@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Duck Creek"
+          ],
+          "status": "Available",
+          "current_load": 0
+        },
+        {
+          "name": "Isha Reddy",
+          "email": "isha.reddy@vitalops-insurance.com",
+          "seniority": "Lead",
+          "specializations": [
+            "Duck Creek"
+          ],
+          "status": "Busy",
+          "current_load": 2
+        },
+        {
+          "name": "Chandni Kumar",
+          "email": "chandni.kumar@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "Duck Creek"
+          ],
+          "status": "Available",
+          "current_load": 2
+        },
+        {
+          "name": "Varun Iyer",
+          "email": "varun.iyer@vitalops-insurance.com",
+          "seniority": "Junior",
+          "specializations": [
+            "Duck Creek"
+          ],
+          "status": "Available",
+          "current_load": 0
+        },
+        {
+          "name": "Vandana Mishra",
+          "email": "vandana.mishra@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "Duck Creek"
+          ],
+          "status": "Available",
+          "current_load": 8
+        }
+      ]
+    },
+    "SAP Basis": {
+      "team_id": "TEAM-07",
+      "service_instances": [
+        "SAP ECC/S4HANA"
+      ],
+      "members": [
+        {
+          "name": "Tanvi Bhattacharya",
+          "email": "tanvi.bhattacharya@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "SAP ECC/S4HANA"
+          ],
+          "status": "On Leave",
+          "current_load": 0
+        },
+        {
+          "name": "Pranav Rao",
+          "email": "pranav.rao@vitalops-insurance.com",
+          "seniority": "Lead",
+          "specializations": [
+            "SAP ECC/S4HANA"
+          ],
+          "status": "Busy",
+          "current_load": 6
+        },
+        {
+          "name": "Ananya Desai",
+          "email": "ananya.desai@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "SAP ECC/S4HANA"
+          ],
+          "status": "Available",
+          "current_load": 6
+        },
+        {
+          "name": "Tanya Mishra",
+          "email": "tanya.mishra@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "SAP ECC/S4HANA"
+          ],
+          "status": "Busy",
+          "current_load": 1
+        },
+        {
+          "name": "Sneha Kumar",
+          "email": "sneha.kumar@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "SAP ECC/S4HANA"
+          ],
+          "status": "Available",
+          "current_load": 7
+        },
+        {
+          "name": "Shikha Das",
+          "email": "shikha.das@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "SAP ECC/S4HANA"
+          ],
+          "status": "Busy",
+          "current_load": 3
+        },
+        {
+          "name": "Ananya Ghosh",
+          "email": "ananya.ghosh@vitalops-insurance.com",
+          "seniority": "Junior",
+          "specializations": [
+            "SAP ECC/S4HANA"
+          ],
+          "status": "Available",
+          "current_load": 1
+        },
+        {
+          "name": "Ramya Hegde",
+          "email": "ramya.hegde@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "SAP ECC/S4HANA"
+          ],
+          "status": "Available",
+          "current_load": 8
+        },
+        {
+          "name": "Sapna Patel",
+          "email": "sapna.patel@vitalops-insurance.com",
+          "seniority": "Junior",
+          "specializations": [
+            "SAP ECC/S4HANA"
+          ],
+          "status": "On Leave",
+          "current_load": 0
+        },
+        {
+          "name": "Nandini Trivedi",
+          "email": "nandini.trivedi@vitalops-insurance.com",
+          "seniority": "Lead",
+          "specializations": [
+            "SAP ECC/S4HANA"
+          ],
+          "status": "Available",
+          "current_load": 1
+        },
+        {
+          "name": "Jatin Lal",
+          "email": "jatin.lal@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "SAP ECC/S4HANA"
+          ],
+          "status": "Busy",
+          "current_load": 6
+        },
+        {
+          "name": "Kishore Saxena",
+          "email": "kishore.saxena@vitalops-insurance.com",
+          "seniority": "Junior",
+          "specializations": [
+            "SAP ECC/S4HANA"
+          ],
+          "status": "Busy",
+          "current_load": 3
+        },
+        {
+          "name": "Rahul Kumar",
+          "email": "rahul.kumar@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "SAP ECC/S4HANA"
+          ],
+          "status": "Available",
+          "current_load": 8
+        }
+      ]
+    },
+    "M365 Support": {
+      "team_id": "TEAM-08",
+      "service_instances": [
+        "Microsoft 365"
+      ],
+      "members": [
+        {
+          "name": "Vandana Ghosh",
+          "email": "vandana.ghosh@vitalops-insurance.com",
+          "seniority": "Junior",
+          "specializations": [
+            "Microsoft 365"
+          ],
+          "status": "Available",
+          "current_load": 5
+        },
+        {
+          "name": "Madhav Fernandes",
+          "email": "madhav.fernandes@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "Microsoft 365"
+          ],
+          "status": "Available",
+          "current_load": 4
+        },
+        {
+          "name": "Abhishek Das",
+          "email": "abhishek.das@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "Microsoft 365"
+          ],
+          "status": "Available",
+          "current_load": 4
+        },
+        {
+          "name": "Darshan Iyer",
+          "email": "darshan.iyer@vitalops-insurance.com",
+          "seniority": "Junior",
+          "specializations": [
+            "Microsoft 365"
+          ],
+          "status": "Busy",
+          "current_load": 6
+        },
+        {
+          "name": "Uday Desai",
+          "email": "uday.desai@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "Microsoft 365"
+          ],
+          "status": "Available",
+          "current_load": 8
+        },
+        {
+          "name": "Aarav Das",
+          "email": "aarav.das@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Microsoft 365"
+          ],
+          "status": "Available",
+          "current_load": 5
+        },
+        {
+          "name": "Vinod Mehta",
+          "email": "vinod.mehta@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Microsoft 365"
+          ],
+          "status": "Available",
+          "current_load": 7
+        },
+        {
+          "name": "Chandra Rao",
+          "email": "chandra.rao@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "Microsoft 365"
+          ],
+          "status": "Available",
+          "current_load": 5
+        },
+        {
+          "name": "Divya Mishra",
+          "email": "divya.mishra@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "Microsoft 365"
+          ],
+          "status": "Available",
+          "current_load": 3
+        },
+        {
+          "name": "Lakshmi Patel",
+          "email": "lakshmi.patel@vitalops-insurance.com",
+          "seniority": "Junior",
+          "specializations": [
+            "Microsoft 365"
+          ],
+          "status": "On Leave",
+          "current_load": 0
+        },
+        {
+          "name": "Lavanya Reddy",
+          "email": "lavanya.reddy@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Microsoft 365"
+          ],
+          "status": "Busy",
+          "current_load": 3
+        },
+        {
+          "name": "Zeeshan Malhotra",
+          "email": "zeeshan.malhotra@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Microsoft 365"
+          ],
+          "status": "Available",
+          "current_load": 2
+        }
+      ]
+    },
+    "ITSM Platform Support": {
+      "team_id": "TEAM-09",
+      "service_instances": [
+        "ServiceNow"
+      ],
+      "members": [
+        {
+          "name": "Raghu Malhotra",
+          "email": "raghu.malhotra@vitalops-insurance.com",
+          "seniority": "Junior",
+          "specializations": [
+            "ServiceNow"
+          ],
+          "status": "Busy",
+          "current_load": 1
+        },
+        {
+          "name": "Uma Shah",
+          "email": "uma.shah@vitalops-insurance.com",
+          "seniority": "Junior",
+          "specializations": [
+            "ServiceNow"
+          ],
+          "status": "On Leave",
+          "current_load": 0
+        },
+        {
+          "name": "Arun Nambiar",
+          "email": "arun.nambiar@vitalops-insurance.com",
+          "seniority": "Junior",
+          "specializations": [
+            "ServiceNow"
+          ],
+          "status": "Available",
+          "current_load": 1
+        },
+        {
+          "name": "Vinay Iyer",
+          "email": "vinay.iyer@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "ServiceNow"
+          ],
+          "status": "Busy",
+          "current_load": 8
+        },
+        {
+          "name": "Jatin Fernandes",
+          "email": "jatin.fernandes@vitalops-insurance.com",
+          "seniority": "Lead",
+          "specializations": [
+            "ServiceNow"
+          ],
+          "status": "Busy",
+          "current_load": 8
+        },
+        {
+          "name": "Uma Venkatesh",
+          "email": "uma.venkatesh@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "ServiceNow"
+          ],
+          "status": "Available",
+          "current_load": 7
+        },
+        {
+          "name": "Vijay Agarwal",
+          "email": "vijay.agarwal@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "ServiceNow"
+          ],
+          "status": "Busy",
+          "current_load": 4
+        },
+        {
+          "name": "Arun Rajan",
+          "email": "arun.rajan@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "ServiceNow"
+          ],
+          "status": "Available",
+          "current_load": 1
+        },
+        {
+          "name": "Zeeshan Chopra",
+          "email": "zeeshan.chopra@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "ServiceNow"
+          ],
+          "status": "Available",
+          "current_load": 8
+        },
+        {
+          "name": "Dhruv Iyer",
+          "email": "dhruv.iyer@vitalops-insurance.com",
+          "seniority": "Junior",
+          "specializations": [
+            "ServiceNow"
+          ],
+          "status": "Available",
+          "current_load": 2
+        }
+      ]
+    },
+    "ERP Support": {
+      "team_id": "TEAM-10",
+      "service_instances": [
+        "Oracle EBS"
+      ],
+      "members": [
+        {
+          "name": "Yasmin Pillai",
+          "email": "yasmin.pillai@vitalops-insurance.com",
+          "seniority": "Junior",
+          "specializations": [
+            "Oracle EBS"
+          ],
+          "status": "Available",
+          "current_load": 8
+        },
+        {
+          "name": "Vinod Kulkarni",
+          "email": "vinod.kulkarni@vitalops-insurance.com",
+          "seniority": "Junior",
+          "specializations": [
+            "Oracle EBS"
+          ],
+          "status": "Busy",
+          "current_load": 6
+        },
+        {
+          "name": "Hemant Malhotra",
+          "email": "hemant.malhotra@vitalops-insurance.com",
+          "seniority": "Junior",
+          "specializations": [
+            "Oracle EBS"
+          ],
+          "status": "Busy",
+          "current_load": 6
+        },
+        {
+          "name": "Yamini Sharma",
+          "email": "yamini.sharma@vitalops-insurance.com",
+          "seniority": "Lead",
+          "specializations": [
+            "Oracle EBS"
+          ],
+          "status": "Available",
+          "current_load": 6
+        },
+        {
+          "name": "Tushar Unnikrishnan",
+          "email": "tushar.unnikrishnan@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "Oracle EBS"
+          ],
+          "status": "Available",
+          "current_load": 3
+        },
+        {
+          "name": "Yogesh Shah",
+          "email": "yogesh.shah@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Oracle EBS"
+          ],
+          "status": "Available",
+          "current_load": 6
+        },
+        {
+          "name": "Sharath Ghosh",
+          "email": "sharath.ghosh@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "Oracle EBS"
+          ],
+          "status": "Available",
+          "current_load": 2
+        },
+        {
+          "name": "Vinod Iyer",
+          "email": "vinod.iyer@vitalops-insurance.com",
+          "seniority": "Lead",
+          "specializations": [
+            "Oracle EBS"
+          ],
+          "status": "Available",
+          "current_load": 6
+        },
+        {
+          "name": "Indira Yadav",
+          "email": "indira.yadav@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "Oracle EBS"
+          ],
+          "status": "Available",
+          "current_load": 6
+        },
+        {
+          "name": "Kavita Nambiar",
+          "email": "kavita.nambiar@vitalops-insurance.com",
+          "seniority": "Junior",
+          "specializations": [
+            "Oracle EBS"
+          ],
+          "status": "Available",
+          "current_load": 5
+        },
+        {
+          "name": "Pankaj Nambiar",
+          "email": "pankaj.nambiar@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Oracle EBS"
+          ],
+          "status": "Busy",
+          "current_load": 6
+        },
+        {
+          "name": "Ramya Kulkarni",
+          "email": "ramya.kulkarni@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Oracle EBS"
+          ],
+          "status": "Available",
+          "current_load": 0
+        }
+      ]
+    },
+    "Data Integration": {
+      "team_id": "TEAM-11",
+      "service_instances": [
+        "Informatica/ETL"
+      ],
+      "members": [
+        {
+          "name": "Devika Unnikrishnan",
+          "email": "devika.unnikrishnan@vitalops-insurance.com",
+          "seniority": "Junior",
+          "specializations": [
+            "Informatica/ETL"
+          ],
+          "status": "On Leave",
+          "current_load": 0
+        },
+        {
+          "name": "Pooja Deshpande",
+          "email": "pooja.deshpande@vitalops-insurance.com",
+          "seniority": "Junior",
+          "specializations": [
+            "Informatica/ETL"
+          ],
+          "status": "On Leave",
+          "current_load": 0
+        },
+        {
+          "name": "Anjali Patel",
+          "email": "anjali.patel@vitalops-insurance.com",
+          "seniority": "Lead",
+          "specializations": [
+            "Informatica/ETL"
+          ],
+          "status": "Available",
+          "current_load": 0
+        },
+        {
+          "name": "Madhav Menon",
+          "email": "madhav.menon@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Informatica/ETL"
+          ],
+          "status": "Available",
+          "current_load": 1
+        },
+        {
+          "name": "Farah Pillai",
+          "email": "farah.pillai@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Informatica/ETL"
+          ],
+          "status": "Available",
+          "current_load": 5
+        },
+        {
+          "name": "Mohan Srinivasan",
+          "email": "mohan.srinivasan@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "Informatica/ETL"
+          ],
+          "status": "Busy",
+          "current_load": 1
+        },
+        {
+          "name": "Meera Das",
+          "email": "meera.das@vitalops-insurance.com",
+          "seniority": "Junior",
+          "specializations": [
+            "Informatica/ETL"
+          ],
+          "status": "Available",
+          "current_load": 4
+        },
+        {
+          "name": "Ganesh Khanna",
+          "email": "ganesh.khanna@vitalops-insurance.com",
+          "seniority": "Lead",
+          "specializations": [
+            "Informatica/ETL"
+          ],
+          "status": "Available",
+          "current_load": 3
+        },
+        {
+          "name": "Deepa Trivedi",
+          "email": "deepa.trivedi@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "Informatica/ETL"
+          ],
+          "status": "Busy",
+          "current_load": 1
+        },
+        {
+          "name": "Xavier Das",
+          "email": "xavier.das@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "Informatica/ETL"
+          ],
+          "status": "Busy",
+          "current_load": 1
+        },
+        {
+          "name": "Farah Kumar",
+          "email": "farah.kumar@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Informatica/ETL"
+          ],
+          "status": "Available",
+          "current_load": 5
+        }
+      ]
+    },
+    "IAM Security": {
+      "team_id": "TEAM-12",
+      "service_instances": [
+        "Active Directory/IAM"
+      ],
+      "members": [
+        {
+          "name": "Chetan Saxena",
+          "email": "chetan.saxena@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "Active Directory/IAM"
+          ],
+          "status": "Available",
+          "current_load": 6
+        },
+        {
+          "name": "Yogesh Gupta",
+          "email": "yogesh.gupta@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Active Directory/IAM"
+          ],
+          "status": "Available",
+          "current_load": 7
+        },
+        {
+          "name": "Yasmin Menon",
+          "email": "yasmin.menon@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Active Directory/IAM"
+          ],
+          "status": "Busy",
+          "current_load": 4
+        },
+        {
+          "name": "Lavanya Unnikrishnan",
+          "email": "lavanya.unnikrishnan@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "Active Directory/IAM"
+          ],
+          "status": "Available",
+          "current_load": 4
+        },
+        {
+          "name": "Sanjay Mishra",
+          "email": "sanjay.mishra@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "Active Directory/IAM"
+          ],
+          "status": "Available",
+          "current_load": 7
+        },
+        {
+          "name": "Priya Nambiar",
+          "email": "priya.nambiar@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Active Directory/IAM"
+          ],
+          "status": "Busy",
+          "current_load": 5
+        },
+        {
+          "name": "Ananya Rajan",
+          "email": "ananya.rajan@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "Active Directory/IAM"
+          ],
+          "status": "Available",
+          "current_load": 3
+        },
+        {
+          "name": "Shreya Agarwal",
+          "email": "shreya.agarwal@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Active Directory/IAM"
+          ],
+          "status": "Busy",
+          "current_load": 4
+        },
+        {
+          "name": "Esha Sharma",
+          "email": "esha.sharma@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Active Directory/IAM"
+          ],
+          "status": "Available",
+          "current_load": 3
+        },
+        {
+          "name": "Ajay Kulkarni",
+          "email": "ajay.kulkarni@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Active Directory/IAM"
+          ],
+          "status": "Busy",
+          "current_load": 7
+        },
+        {
+          "name": "Preeti Mukherjee",
+          "email": "preeti.mukherjee@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Active Directory/IAM"
+          ],
+          "status": "Busy",
+          "current_load": 1
+        },
+        {
+          "name": "Rekha Shah",
+          "email": "rekha.shah@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Active Directory/IAM"
+          ],
+          "status": "Available",
+          "current_load": 5
+        }
+      ]
+    },
+    "Network Engineering": {
+      "team_id": "TEAM-13",
+      "service_instances": [
+        "Network/Infrastructure"
+      ],
+      "members": [
+        {
+          "name": "Vivek Venkatesh",
+          "email": "vivek.venkatesh@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Network/Infrastructure"
+          ],
+          "status": "Available",
+          "current_load": 8
+        },
+        {
+          "name": "Sapna Hegde",
+          "email": "sapna.hegde@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "Network/Infrastructure"
+          ],
+          "status": "Available",
+          "current_load": 4
+        },
+        {
+          "name": "Pradeep Joshi",
+          "email": "pradeep.joshi@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "Network/Infrastructure"
+          ],
+          "status": "Available",
+          "current_load": 8
+        },
+        {
+          "name": "Wasim Desai",
+          "email": "wasim.desai@vitalops-insurance.com",
+          "seniority": "Junior",
+          "specializations": [
+            "Network/Infrastructure"
+          ],
+          "status": "Busy",
+          "current_load": 4
+        },
+        {
+          "name": "Ajay Trivedi",
+          "email": "ajay.trivedi@vitalops-insurance.com",
+          "seniority": "Lead",
+          "specializations": [
+            "Network/Infrastructure"
+          ],
+          "status": "Available",
+          "current_load": 4
+        },
+        {
+          "name": "Gaurav Verma",
+          "email": "gaurav.verma@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Network/Infrastructure"
+          ],
+          "status": "Available",
+          "current_load": 4
+        },
+        {
+          "name": "Aditi Mukherjee",
+          "email": "aditi.mukherjee@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Network/Infrastructure"
+          ],
+          "status": "Available",
+          "current_load": 0
+        },
+        {
+          "name": "Darshan Chopra",
+          "email": "darshan.chopra@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "Network/Infrastructure"
+          ],
+          "status": "Available",
+          "current_load": 7
+        },
+        {
+          "name": "Harini Sharma",
+          "email": "harini.sharma@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Network/Infrastructure"
+          ],
+          "status": "Available",
+          "current_load": 7
+        },
+        {
+          "name": "Sharath Desai",
+          "email": "sharath.desai@vitalops-insurance.com",
+          "seniority": "Lead",
+          "specializations": [
+            "Network/Infrastructure"
+          ],
+          "status": "Available",
+          "current_load": 7
+        },
+        {
+          "name": "Swati Rajan",
+          "email": "swati.rajan@vitalops-insurance.com",
+          "seniority": "Junior",
+          "specializations": [
+            "Network/Infrastructure"
+          ],
+          "status": "Busy",
+          "current_load": 0
+        },
+        {
+          "name": "Manish Menon",
+          "email": "manish.menon@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "Network/Infrastructure"
+          ],
+          "status": "On Leave",
+          "current_load": 0
+        },
+        {
+          "name": "Dhruv Mishra",
+          "email": "dhruv.mishra@vitalops-insurance.com",
+          "seniority": "Junior",
+          "specializations": [
+            "Network/Infrastructure"
+          ],
+          "status": "Busy",
+          "current_load": 3
+        },
+        {
+          "name": "Arun Jain",
+          "email": "arun.jain@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Network/Infrastructure"
+          ],
+          "status": "Available",
+          "current_load": 6
+        }
+      ]
+    },
+    "HEAL Engineering": {
+      "team_id": "TEAM-14",
+      "service_instances": [
+        "HEAL"
+      ],
+      "members": [
+        {
+          "name": "Sakshi Yadav",
+          "email": "sakshi.yadav@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "HEAL"
+          ],
+          "status": "Busy",
+          "current_load": 1
+        },
+        {
+          "name": "Pallavi Chatterjee",
+          "email": "pallavi.chatterjee@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "HEAL"
+          ],
+          "status": "Busy",
+          "current_load": 2
+        },
+        {
+          "name": "Pranav Desai",
+          "email": "pranav.desai@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "HEAL"
+          ],
+          "status": "Available",
+          "current_load": 6
+        },
+        {
+          "name": "Vijay Malhotra",
+          "email": "vijay.malhotra@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "HEAL"
+          ],
+          "status": "Available",
+          "current_load": 3
+        },
+        {
+          "name": "Ravi Mukherjee",
+          "email": "ravi.mukherjee@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "HEAL"
+          ],
+          "status": "Busy",
+          "current_load": 1
+        },
+        {
+          "name": "Vandana Shah",
+          "email": "vandana.shah@vitalops-insurance.com",
+          "seniority": "Lead",
+          "specializations": [
+            "HEAL"
+          ],
+          "status": "Busy",
+          "current_load": 3
+        },
+        {
+          "name": "Uma Joshi",
+          "email": "uma.joshi@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "HEAL"
+          ],
+          "status": "Busy",
+          "current_load": 4
+        },
+        {
+          "name": "Lakshmi Reddy",
+          "email": "lakshmi.reddy@vitalops-insurance.com",
+          "seniority": "Junior",
+          "specializations": [
+            "HEAL"
+          ],
+          "status": "Busy",
+          "current_load": 4
+        },
+        {
+          "name": "Vidya Joshi",
+          "email": "vidya.joshi@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "HEAL"
+          ],
+          "status": "Available",
+          "current_load": 6
+        },
+        {
+          "name": "Rakesh Saxena",
+          "email": "rakesh.saxena@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "HEAL"
+          ],
+          "status": "Available",
+          "current_load": 0
+        },
+        {
+          "name": "Varun Fernandes",
+          "email": "varun.fernandes@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "HEAL"
+          ],
+          "status": "Available",
+          "current_load": 3
+        },
+        {
+          "name": "Uday Yadav",
+          "email": "uday.yadav@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "HEAL"
+          ],
+          "status": "Available",
+          "current_load": 4
+        },
+        {
+          "name": "Ganesh Kumar",
+          "email": "ganesh.kumar@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "HEAL"
+          ],
+          "status": "Available",
+          "current_load": 8
+        }
+      ]
+    },
+    "Database Admin": {
+      "team_id": "TEAM-15",
+      "service_instances": [
+        "SAP ECC/S4HANA",
+        "Oracle EBS",
+        "Informatica/ETL"
+      ],
+      "members": [
+        {
+          "name": "Raghu Mehta",
+          "email": "raghu.mehta@vitalops-insurance.com",
+          "seniority": "Lead",
+          "specializations": [
+            "SAP ECC/S4HANA",
+            "Oracle EBS",
+            "Informatica/ETL"
+          ],
+          "status": "Available",
+          "current_load": 6
+        },
+        {
+          "name": "Omkar Rajan",
+          "email": "omkar.rajan@vitalops-insurance.com",
+          "seniority": "Lead",
+          "specializations": [
+            "SAP ECC/S4HANA",
+            "Oracle EBS",
+            "Informatica/ETL"
+          ],
+          "status": "Available",
+          "current_load": 6
+        },
+        {
+          "name": "Sapna Fernandes",
+          "email": "sapna.fernandes@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "SAP ECC/S4HANA",
+            "Oracle EBS",
+            "Informatica/ETL"
+          ],
+          "status": "Busy",
+          "current_load": 5
+        },
+        {
+          "name": "Tanvi Malhotra",
+          "email": "tanvi.malhotra@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "SAP ECC/S4HANA",
+            "Oracle EBS",
+            "Informatica/ETL"
+          ],
+          "status": "Busy",
+          "current_load": 6
+        },
+        {
+          "name": "Darshan Kumar",
+          "email": "darshan.kumar@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "SAP ECC/S4HANA",
+            "Oracle EBS",
+            "Informatica/ETL"
+          ],
+          "status": "Available",
+          "current_load": 5
+        },
+        {
+          "name": "Isha Kapoor",
+          "email": "isha.kapoor@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "SAP ECC/S4HANA",
+            "Oracle EBS",
+            "Informatica/ETL"
+          ],
+          "status": "Busy",
+          "current_load": 0
+        },
+        {
+          "name": "Sahil Unnikrishnan",
+          "email": "sahil.unnikrishnan@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "SAP ECC/S4HANA",
+            "Oracle EBS",
+            "Informatica/ETL"
+          ],
+          "status": "Available",
+          "current_load": 8
+        },
+        {
+          "name": "Siddharth Bhattacharya",
+          "email": "siddharth.bhattacharya@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "SAP ECC/S4HANA",
+            "Oracle EBS",
+            "Informatica/ETL"
+          ],
+          "status": "Busy",
+          "current_load": 0
+        },
+        {
+          "name": "Pallavi Bhat",
+          "email": "pallavi.bhat@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "SAP ECC/S4HANA",
+            "Oracle EBS",
+            "Informatica/ETL"
+          ],
+          "status": "On Leave",
+          "current_load": 0
+        },
+        {
+          "name": "Vidya Malhotra",
+          "email": "vidya.malhotra@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "SAP ECC/S4HANA",
+            "Oracle EBS",
+            "Informatica/ETL"
+          ],
+          "status": "Available",
+          "current_load": 3
+        }
+      ]
+    },
+    "App Security": {
+      "team_id": "TEAM-16",
+      "service_instances": [
+        "Active Directory/IAM",
+        "Network/Infrastructure",
+        "WSO2 API Gateway"
+      ],
+      "members": [
+        {
+          "name": "Yasmin Rao",
+          "email": "yasmin.rao@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Active Directory/IAM",
+            "Network/Infrastructure",
+            "WSO2 API Gateway"
+          ],
+          "status": "Available",
+          "current_load": 6
+        },
+        {
+          "name": "Divya Shah",
+          "email": "divya.shah@vitalops-insurance.com",
+          "seniority": "Lead",
+          "specializations": [
+            "Active Directory/IAM",
+            "Network/Infrastructure",
+            "WSO2 API Gateway"
+          ],
+          "status": "On Leave",
+          "current_load": 0
+        },
+        {
+          "name": "Vinod Joshi",
+          "email": "vinod.joshi@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "Active Directory/IAM",
+            "Network/Infrastructure",
+            "WSO2 API Gateway"
+          ],
+          "status": "Available",
+          "current_load": 4
+        },
+        {
+          "name": "Akshay Mukherjee",
+          "email": "akshay.mukherjee@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Active Directory/IAM",
+            "Network/Infrastructure",
+            "WSO2 API Gateway"
+          ],
+          "status": "Busy",
+          "current_load": 7
+        },
+        {
+          "name": "Darshan Menon",
+          "email": "darshan.menon@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Active Directory/IAM",
+            "Network/Infrastructure",
+            "WSO2 API Gateway"
+          ],
+          "status": "On Leave",
+          "current_load": 0
+        },
+        {
+          "name": "Akshay Iyer",
+          "email": "akshay.iyer@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "Active Directory/IAM",
+            "Network/Infrastructure",
+            "WSO2 API Gateway"
+          ],
+          "status": "Available",
+          "current_load": 6
+        },
+        {
+          "name": "Sharath Saxena",
+          "email": "sharath.saxena@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Active Directory/IAM",
+            "Network/Infrastructure",
+            "WSO2 API Gateway"
+          ],
+          "status": "Available",
+          "current_load": 4
+        },
+        {
+          "name": "Indira Trivedi",
+          "email": "indira.trivedi@vitalops-insurance.com",
+          "seniority": "Lead",
+          "specializations": [
+            "Active Directory/IAM",
+            "Network/Infrastructure",
+            "WSO2 API Gateway"
+          ],
+          "status": "Available",
+          "current_load": 2
+        }
+      ]
+    },
+    "Change Management": {
+      "team_id": "TEAM-17",
+      "service_instances": [
+        "ServiceNow",
+        "Salesforce"
+      ],
+      "members": [
+        {
+          "name": "Vijay Unnikrishnan",
+          "email": "vijay.unnikrishnan@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "ServiceNow",
+            "Salesforce"
+          ],
+          "status": "Available",
+          "current_load": 8
+        },
+        {
+          "name": "Sneha Nambiar",
+          "email": "sneha.nambiar@vitalops-insurance.com",
+          "seniority": "Lead",
+          "specializations": [
+            "ServiceNow",
+            "Salesforce"
+          ],
+          "status": "Busy",
+          "current_load": 3
+        },
+        {
+          "name": "Ganesh Jain",
+          "email": "ganesh.jain@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "ServiceNow",
+            "Salesforce"
+          ],
+          "status": "Busy",
+          "current_load": 0
+        },
+        {
+          "name": "Sandeep Pandey",
+          "email": "sandeep.pandey@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "ServiceNow",
+            "Salesforce"
+          ],
+          "status": "Busy",
+          "current_load": 6
+        },
+        {
+          "name": "Sahil Deshpande",
+          "email": "sahil.deshpande@vitalops-insurance.com",
+          "seniority": "Lead",
+          "specializations": [
+            "ServiceNow",
+            "Salesforce"
+          ],
+          "status": "Available",
+          "current_load": 0
+        },
+        {
+          "name": "Karan Saxena",
+          "email": "karan.saxena@vitalops-insurance.com",
+          "seniority": "Lead",
+          "specializations": [
+            "ServiceNow",
+            "Salesforce"
+          ],
+          "status": "Available",
+          "current_load": 1
+        },
+        {
+          "name": "Vidya Gupta",
+          "email": "vidya.gupta@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "ServiceNow",
+            "Salesforce"
+          ],
+          "status": "Available",
+          "current_load": 2
+        },
+        {
+          "name": "Tanvi Deshpande",
+          "email": "tanvi.deshpande@vitalops-insurance.com",
+          "seniority": "Lead",
+          "specializations": [
+            "ServiceNow",
+            "Salesforce"
+          ],
+          "status": "Available",
+          "current_load": 4
+        },
+        {
+          "name": "Sharath Bhattacharya",
+          "email": "sharath.bhattacharya@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "ServiceNow",
+            "Salesforce"
+          ],
+          "status": "Busy",
+          "current_load": 5
+        },
+        {
+          "name": "Uday Unnikrishnan",
+          "email": "uday.unnikrishnan@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "ServiceNow",
+            "Salesforce"
+          ],
+          "status": "Available",
+          "current_load": 7
+        }
+      ]
+    },
+    "Incident Command": {
+      "team_id": "TEAM-18",
+      "service_instances": [
+        "Network/Infrastructure",
+        "ServiceNow"
+      ],
+      "members": [
+        {
+          "name": "Madhav Reddy",
+          "email": "madhav.reddy@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Network/Infrastructure",
+            "ServiceNow"
+          ],
+          "status": "Busy",
+          "current_load": 4
+        },
+        {
+          "name": "Pradeep Nair",
+          "email": "pradeep.nair@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Network/Infrastructure",
+            "ServiceNow"
+          ],
+          "status": "Available",
+          "current_load": 1
+        },
+        {
+          "name": "Vidya Rao",
+          "email": "vidya.rao@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "Network/Infrastructure",
+            "ServiceNow"
+          ],
+          "status": "On Leave",
+          "current_load": 0
+        },
+        {
+          "name": "Anjali Fernandes",
+          "email": "anjali.fernandes@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "Network/Infrastructure",
+            "ServiceNow"
+          ],
+          "status": "Available",
+          "current_load": 5
+        },
+        {
+          "name": "Varun Menon",
+          "email": "varun.menon@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Network/Infrastructure",
+            "ServiceNow"
+          ],
+          "status": "Available",
+          "current_load": 2
+        },
+        {
+          "name": "Mohan Desai",
+          "email": "mohan.desai@vitalops-insurance.com",
+          "seniority": "Junior",
+          "specializations": [
+            "Network/Infrastructure",
+            "ServiceNow"
+          ],
+          "status": "Busy",
+          "current_load": 3
+        },
+        {
+          "name": "Zoya Trivedi",
+          "email": "zoya.trivedi@vitalops-insurance.com",
+          "seniority": "Junior",
+          "specializations": [
+            "Network/Infrastructure",
+            "ServiceNow"
+          ],
+          "status": "Available",
+          "current_load": 4
+        },
+        {
+          "name": "Vinay Agarwal",
+          "email": "vinay.agarwal@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "Network/Infrastructure",
+            "ServiceNow"
+          ],
+          "status": "Busy",
+          "current_load": 7
+        }
+      ]
+    },
+    "L1 Service Desk": {
+      "team_id": "TEAM-19",
+      "service_instances": [
+        "Salesforce",
+        "Microsoft 365",
+        "ServiceNow",
+        "Active Directory/IAM"
+      ],
+      "members": [
+        {
+          "name": "Ravi Khanna",
+          "email": "ravi.khanna@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Salesforce",
+            "Microsoft 365",
+            "ServiceNow",
+            "Active Directory/IAM"
+          ],
+          "status": "Available",
+          "current_load": 5
+        },
+        {
+          "name": "Indira Das",
+          "email": "indira.das@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "Salesforce",
+            "Microsoft 365",
+            "ServiceNow",
+            "Active Directory/IAM"
+          ],
+          "status": "Available",
+          "current_load": 4
+        },
+        {
+          "name": "Vinay Das",
+          "email": "vinay.das@vitalops-insurance.com",
+          "seniority": "Junior",
+          "specializations": [
+            "Salesforce",
+            "Microsoft 365",
+            "ServiceNow",
+            "Active Directory/IAM"
+          ],
+          "status": "Available",
+          "current_load": 7
+        },
+        {
+          "name": "Harini Mishra",
+          "email": "harini.mishra@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Salesforce",
+            "Microsoft 365",
+            "ServiceNow",
+            "Active Directory/IAM"
+          ],
+          "status": "Available",
+          "current_load": 4
+        },
+        {
+          "name": "Xavier Chopra",
+          "email": "xavier.chopra@vitalops-insurance.com",
+          "seniority": "Junior",
+          "specializations": [
+            "Salesforce",
+            "Microsoft 365",
+            "ServiceNow",
+            "Active Directory/IAM"
+          ],
+          "status": "Busy",
+          "current_load": 6
+        },
+        {
+          "name": "Ramya Sharma",
+          "email": "ramya.sharma@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Salesforce",
+            "Microsoft 365",
+            "ServiceNow",
+            "Active Directory/IAM"
+          ],
+          "status": "Busy",
+          "current_load": 0
+        },
+        {
+          "name": "Kishore Rajan",
+          "email": "kishore.rajan@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "Salesforce",
+            "Microsoft 365",
+            "ServiceNow",
+            "Active Directory/IAM"
+          ],
+          "status": "On Leave",
+          "current_load": 0
+        },
+        {
+          "name": "Pradeep Srinivasan",
+          "email": "pradeep.srinivasan@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "Salesforce",
+            "Microsoft 365",
+            "ServiceNow",
+            "Active Directory/IAM"
+          ],
+          "status": "Available",
+          "current_load": 3
+        },
+        {
+          "name": "Madhav Agarwal",
+          "email": "madhav.agarwal@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "Salesforce",
+            "Microsoft 365",
+            "ServiceNow",
+            "Active Directory/IAM"
+          ],
+          "status": "Busy",
+          "current_load": 2
+        },
+        {
+          "name": "Naren Gupta",
+          "email": "naren.gupta@vitalops-insurance.com",
+          "seniority": "Lead",
+          "specializations": [
+            "Salesforce",
+            "Microsoft 365",
+            "ServiceNow",
+            "Active Directory/IAM"
+          ],
+          "status": "Busy",
+          "current_load": 4
+        },
+        {
+          "name": "Vidya Kumar",
+          "email": "vidya.kumar@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Salesforce",
+            "Microsoft 365",
+            "ServiceNow",
+            "Active Directory/IAM"
+          ],
+          "status": "Busy",
+          "current_load": 1
+        },
+        {
+          "name": "Rekha Fernandes",
+          "email": "rekha.fernandes@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "Salesforce",
+            "Microsoft 365",
+            "ServiceNow",
+            "Active Directory/IAM"
+          ],
+          "status": "Available",
+          "current_load": 2
+        },
+        {
+          "name": "Chandni Iyengar",
+          "email": "chandni.iyengar@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Salesforce",
+            "Microsoft 365",
+            "ServiceNow",
+            "Active Directory/IAM"
+          ],
+          "status": "On Leave",
+          "current_load": 0
+        },
+        {
+          "name": "Yamini Chopra",
+          "email": "yamini.chopra@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "Salesforce",
+            "Microsoft 365",
+            "ServiceNow",
+            "Active Directory/IAM"
+          ],
+          "status": "Available",
+          "current_load": 1
+        },
+        {
+          "name": "Vinod Reddy",
+          "email": "vinod.reddy@vitalops-insurance.com",
+          "seniority": "Junior",
+          "specializations": [
+            "Salesforce",
+            "Microsoft 365",
+            "ServiceNow",
+            "Active Directory/IAM"
+          ],
+          "status": "On Leave",
+          "current_load": 0
+        },
+        {
+          "name": "Uday Khanna",
+          "email": "uday.khanna@vitalops-insurance.com",
+          "seniority": "Lead",
+          "specializations": [
+            "Salesforce",
+            "Microsoft 365",
+            "ServiceNow",
+            "Active Directory/IAM"
+          ],
+          "status": "On Leave",
+          "current_load": 0
+        },
+        {
+          "name": "Esha Iyengar",
+          "email": "esha.iyengar@vitalops-insurance.com",
+          "seniority": "Junior",
+          "specializations": [
+            "Salesforce",
+            "Microsoft 365",
+            "ServiceNow",
+            "Active Directory/IAM"
+          ],
+          "status": "Available",
+          "current_load": 4
+        },
+        {
+          "name": "Bharat Joshi",
+          "email": "bharat.joshi@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Salesforce",
+            "Microsoft 365",
+            "ServiceNow",
+            "Active Directory/IAM"
+          ],
+          "status": "Busy",
+          "current_load": 4
+        },
+        {
+          "name": "Hemant Jain",
+          "email": "hemant.jain@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "Salesforce",
+            "Microsoft 365",
+            "ServiceNow",
+            "Active Directory/IAM"
+          ],
+          "status": "On Leave",
+          "current_load": 0
+        },
+        {
+          "name": "Harini Khanna",
+          "email": "harini.khanna@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Salesforce",
+            "Microsoft 365",
+            "ServiceNow",
+            "Active Directory/IAM"
+          ],
+          "status": "Available",
+          "current_load": 8
+        }
+      ]
+    },
+    "Release Engineering": {
+      "team_id": "TEAM-20",
+      "service_instances": [
+        "Salesforce",
+        "Guidewire ClaimCenter",
+        "Guidewire PolicyCenter",
+        "Duck Creek",
+        "SAP ECC/S4HANA"
+      ],
+      "members": [
+        {
+          "name": "Sanjay Bhattacharya",
+          "email": "sanjay.bhattacharya@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Salesforce",
+            "Guidewire ClaimCenter",
+            "Guidewire PolicyCenter",
+            "Duck Creek",
+            "SAP ECC/S4HANA"
+          ],
+          "status": "Available",
+          "current_load": 7
+        },
+        {
+          "name": "Raghu Kulkarni",
+          "email": "raghu.kulkarni@vitalops-insurance.com",
+          "seniority": "Junior",
+          "specializations": [
+            "Salesforce",
+            "Guidewire ClaimCenter",
+            "Guidewire PolicyCenter",
+            "Duck Creek",
+            "SAP ECC/S4HANA"
+          ],
+          "status": "Available",
+          "current_load": 0
+        },
+        {
+          "name": "Rohit Rajan",
+          "email": "rohit.rajan@vitalops-insurance.com",
+          "seniority": "Junior",
+          "specializations": [
+            "Salesforce",
+            "Guidewire ClaimCenter",
+            "Guidewire PolicyCenter",
+            "Duck Creek",
+            "SAP ECC/S4HANA"
+          ],
+          "status": "Available",
+          "current_load": 8
+        },
+        {
+          "name": "Kavita Jain",
+          "email": "kavita.jain@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Salesforce",
+            "Guidewire ClaimCenter",
+            "Guidewire PolicyCenter",
+            "Duck Creek",
+            "SAP ECC/S4HANA"
+          ],
+          "status": "Busy",
+          "current_load": 8
+        },
+        {
+          "name": "Tushar Trivedi",
+          "email": "tushar.trivedi@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "Salesforce",
+            "Guidewire ClaimCenter",
+            "Guidewire PolicyCenter",
+            "Duck Creek",
+            "SAP ECC/S4HANA"
+          ],
+          "status": "Available",
+          "current_load": 6
+        },
+        {
+          "name": "Raghu Gupta",
+          "email": "raghu.gupta@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "Salesforce",
+            "Guidewire ClaimCenter",
+            "Guidewire PolicyCenter",
+            "Duck Creek",
+            "SAP ECC/S4HANA"
+          ],
+          "status": "Busy",
+          "current_load": 4
+        },
+        {
+          "name": "Anil Malhotra",
+          "email": "anil.malhotra@vitalops-insurance.com",
+          "seniority": "Mid",
+          "specializations": [
+            "Salesforce",
+            "Guidewire ClaimCenter",
+            "Guidewire PolicyCenter",
+            "Duck Creek",
+            "SAP ECC/S4HANA"
+          ],
+          "status": "Available",
+          "current_load": 3
+        },
+        {
+          "name": "Siddharth Gupta",
+          "email": "siddharth.gupta@vitalops-insurance.com",
+          "seniority": "Lead",
+          "specializations": [
+            "Salesforce",
+            "Guidewire ClaimCenter",
+            "Guidewire PolicyCenter",
+            "Duck Creek",
+            "SAP ECC/S4HANA"
+          ],
+          "status": "Available",
+          "current_load": 5
+        },
+        {
+          "name": "Ramya Verma",
+          "email": "ramya.verma@vitalops-insurance.com",
+          "seniority": "Lead",
+          "specializations": [
+            "Salesforce",
+            "Guidewire ClaimCenter",
+            "Guidewire PolicyCenter",
+            "Duck Creek",
+            "SAP ECC/S4HANA"
+          ],
+          "status": "On Leave",
+          "current_load": 0
+        },
+        {
+          "name": "Vinay Nair",
+          "email": "vinay.nair@vitalops-insurance.com",
+          "seniority": "Senior",
+          "specializations": [
+            "Salesforce",
+            "Guidewire ClaimCenter",
+            "Guidewire PolicyCenter",
+            "Duck Creek",
+            "SAP ECC/S4HANA"
+          ],
+          "status": "Busy",
+          "current_load": 0
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,224 @@
+{
+  "departments": [
+    "Claims Processing", "Underwriting", "Policy Administration", "Finance & Accounting",
+    "IT Operations", "Customer Service", "Actuarial", "Compliance & Legal",
+    "Marketing", "Human Resources", "Risk Management", "Agent Services",
+    "Reinsurance", "Product Development", "Fraud Investigation",
+    "Business Intelligence", "Digital Transformation", "Enterprise Architecture"
+  ],
+  "locations": [
+    "Mumbai HQ", "Bangalore Tech Park", "Delhi NCR Office", "Chennai Campus",
+    "Hyderabad Tower", "Pune IT Hub", "Kolkata Branch", "Ahmedabad Office",
+    "Noida Cyber City", "Gurugram Tower", "Kochi InfoPark", "Jaipur Center",
+    "Lucknow Branch", "Chandigarh Office", "Indore Hub"
+  ],
+  "organisations": [
+    "National Insurance Corp", "United Health Shield", "Pacific Life Assurance",
+    "Meridian General Insurance", "Atlas Re Insurance", "Pinnacle Health Cover",
+    "Evergreen Life Insurance", "Sentinel Risk Underwriters", "Guardian Shield Insurance",
+    "Horizon Mutual Benefit", "Premier Casualty Group", "Apex Claims Solutions"
+  ],
+  "sources": [
+    "Xurrent Portal", "Dynatrace Alert", "Email", "Phone Call", "Chat",
+    "Self-Service Portal", "Monitoring Alert", "Automated Trigger", "Walk-in"
+  ],
+  "environments": [
+    "Production", "Staging", "Development", "DR", "UAT", "Pre-Production"
+  ],
+  "browsers": [
+    "Chrome 124", "Edge 124", "Firefox 126", "Safari 17", "Chrome 123"
+  ],
+  "events": [
+    "overnight maintenance window", "recent deployment v4.2.1", "Windows patch rollout",
+    "network switch upgrade", "SSL certificate renewal", "database migration",
+    "cloud migration phase 2", "quarterly security patching", "CDN configuration change",
+    "load balancer reconfiguration", "API gateway version upgrade", "SSO provider migration",
+    "storage tier expansion", "firewall rule update", "DNS failover test"
+  ],
+  "error_codes": {
+    "salesforce": [
+      "APEX_ERROR: System.LimitException", "INVALID_SESSION_ID", "REQUEST_LIMIT_EXCEEDED",
+      "UNABLE_TO_LOCK_ROW", "FIELD_INTEGRITY_EXCEPTION", "STORAGE_LIMIT_EXCEEDED",
+      "DUPLICATE_VALUE", "INVALID_CROSS_REFERENCE_KEY", "OAUTH_APPROVAL_ERROR",
+      "MALFORMED_QUERY", "INSUFFICIENT_ACCESS_OR_READONLY"
+    ],
+    "wso2": [
+      "HTTP 502 Bad Gateway", "HTTP 504 Gateway Timeout", "OAuth2 Token Expired",
+      "CORS_POLICY_VIOLATION", "SSL_HANDSHAKE_FAILURE", "THROTTLE_LIMIT_EXCEEDED",
+      "MEDIATION_FAULT", "JWT_VALIDATION_FAILED", "API_SUBSCRIPTION_BLOCKED",
+      "BACKEND_CONNECTION_REFUSED", "CERTIFICATE_EXPIRED"
+    ],
+    "guidewire_claim": [
+      "GW-CC-5001: Workflow transition failed", "GW-CC-4003: Payment batch error",
+      "GW-CC-3012: Document generation timeout", "GW-CC-2045: Reserve calculation overflow",
+      "GW-CC-6001: Assignment rule conflict", "GW-CC-4050: ISO reporting format error",
+      "GW-CC-3033: Search index corruption", "GW-CC-5500: Configuration import failed"
+    ],
+    "guidewire_policy": [
+      "GW-PC-5001: Rating engine exception", "GW-PC-4003: Binding validation failed",
+      "GW-PC-3012: Premium calculation mismatch", "GW-PC-2045: Endorsement workflow stuck",
+      "GW-PC-6001: Renewal batch abort", "GW-PC-3033: Form set generation error",
+      "GW-PC-7001: Commission calculation overflow", "GW-PC-5500: Submission validation error"
+    ],
+    "duck_creek": [
+      "DC-ERR-401: Authentication token expired", "DC-ERR-500: Policy admin service unavailable",
+      "DC-ERR-503: Billing engine timeout", "DC-ERR-422: Form rendering validation failed",
+      "DC-ERR-409: Endorsement conflict", "DC-ERR-504: Rating sync timeout",
+      "DC-ERR-507: Storage quota exceeded"
+    ],
+    "sap": [
+      "ABAP Runtime Error: DBIF_RSQL_INVALID_REQUEST", "SM12 Lock Entry Conflict",
+      "SM37 Job Status: CANCELLED", "RFC Connection Error: COMMUNICATION_FAILURE",
+      "IDOC Status 51: Application Error", "Authorization Error SU53: Missing Object",
+      "Transport Error: RC=8 Import Failed", "Spool Overflow: TSPEVT Full",
+      "GL Posting Error: F5A001", "Period Close Error: RGGBS000"
+    ],
+    "microsoft365": [
+      "EWS Error: ErrorMailboxMoveInProgress", "AAD Error: AADSTS50076 MFA Required",
+      "SharePoint Error: 503 Service Unavailable", "Teams Error: CommunicationError",
+      "OneDrive Sync Conflict: CONFLICT_DETECTED", "Exchange: NDR 5.7.1 Access Denied",
+      "Conditional Access: BlockedByPolicy", "Graph API: 429 TooManyRequests"
+    ],
+    "servicenow": [
+      "GlideRecord Exception: ACL Violation", "MID Server: Agent Status OFFLINE",
+      "Workflow Error: Transition not allowed", "SLA Engine: Calculation Error",
+      "CMDB: Discovery Probe Timeout", "Import Set: Transform Map Error",
+      "Catalog: Variable Set Rendering Failed", "GlideAjax: Script Error"
+    ],
+    "oracle_ebs": [
+      "FRM-92095: Forms Runtime Error", "APP-FND-01564: Concurrent Manager Down",
+      "ORA-00060: Deadlock Detected", "AP-INV-001: Invoice Approval Stuck",
+      "GL-POST-001: Journal Import Error", "INV-TXN-003: Transaction Validation Failed",
+      "FA-DEP-002: Depreciation Run Error", "PO-WF-001: Approval Workflow Stuck"
+    ],
+    "informatica": [
+      "PCSF_46008: Source Connection Failed", "PCSF_46020: Target Write Error",
+      "TM_6006: Mapping Validation Failed", "REP_61068: Repository Service Down",
+      "SESSION-001: Lookup Cache Build Failed", "SCHEDULER-003: Workflow Trigger Missed",
+      "DQ-VAL-001: Data Quality Rule Violation", "ETL-PERF-001: Session Timeout"
+    ],
+    "active_directory": [
+      "KDC_ERR_PREAUTH_FAILED", "LDAP Error 49: Invalid Credentials",
+      "GPO Error: 0x8007071A Policy Application Failed", "Replication Error: 8453",
+      "Azure AD Connect: Sync Error AttributeValueMustBeUnique",
+      "ADFS Error: MSIS7042 Certificate Expired", "PAM Vault: Checkout Failed",
+      "SSPR Error: PasswordResetNotEnabled"
+    ],
+    "network": [
+      "BGP Peer Down: Hold Timer Expired", "DHCP: Scope Exhausted 0 Available",
+      "DNS Resolution Failed: SERVFAIL", "SSL Certificate Expired: ERR_CERT_DATE_INVALID",
+      "VPN Error: IKE Phase 1 Timeout", "F5 Health Check: Pool Member Down",
+      "WAN Utilization: 95% Threshold Exceeded", "RADIUS Auth Failed: Access-Reject"
+    ],
+    "heal": [
+      "HEAL-UW-001: Risk Assessment Engine Timeout", "HEAL-UW-002: Medical Data Fetch Failed",
+      "HEAL-UW-003: Policy Pricing Calculation Error", "HEAL-UW-004: Document OCR Failed",
+      "HEAL-UW-005: Workflow Approval Chain Broken", "HEAL-UW-006: KYC Validation Error",
+      "HEAL-UW-007: Reinsurance Limit Check Failed", "HEAL-UW-008: Premium Quote Expired"
+    ],
+    "generic": [
+      "CONNECTION_TIMEOUT", "INTERNAL_SERVER_ERROR", "SERVICE_UNAVAILABLE",
+      "AUTHENTICATION_FAILED", "PERMISSION_DENIED", "RESOURCE_NOT_FOUND"
+    ]
+  },
+  "component_names": {
+    "salesforce": ["Apex Trigger Manager", "Lightning Component Framework", "Flow Engine", "OAuth Module", "Bulk API Handler", "Connected App Layer"],
+    "wso2": ["API Gateway Proxy", "Token Manager", "Mediation Engine", "Throttle Handler", "Developer Portal", "Carbon Console"],
+    "guidewire_claim": ["Claim Intake Module", "Payment Processor", "Document Generator", "Reserve Calculator", "Assignment Engine", "Activity Manager"],
+    "guidewire_policy": ["Rating Engine", "Binding Processor", "Renewal Batch", "Endorsement Handler", "Form Set Generator", "Commission Module"],
+    "duck_creek": ["Policy Admin Core", "Billing Engine", "Document Assembly", "Rating Service", "Producer Portal", "Configuration Manager"],
+    "sap": ["ABAP Runtime", "Batch Scheduler", "RFC Gateway", "IDOC Processor", "Transport Manager", "Workflow Engine"],
+    "microsoft365": ["Exchange Transport", "SharePoint Search Index", "Teams Media Stack", "Azure AD Authentication", "OneDrive Sync Client", "Power Automate Runtime"],
+    "servicenow": ["Glide Engine", "MID Server Agent", "SLA Calculator", "CMDB Discovery", "Workflow Runtime", "Service Catalog"],
+    "oracle_ebs": ["Concurrent Manager", "Forms Server", "GL Engine", "AP Module", "PO Workflow", "FA Depreciation"],
+    "informatica": ["PowerCenter Repository", "Integration Service", "Session Manager", "Lookup Cache", "Data Quality Engine", "Scheduler"],
+    "active_directory": ["Kerberos KDC", "LDAP Service", "GPO Processor", "Replication Engine", "Azure AD Connect", "ADFS Service"],
+    "network": ["BGP Router", "DHCP Server", "DNS Resolver", "Load Balancer", "VPN Concentrator", "Firewall Engine"],
+    "heal": ["Risk Assessment Engine", "Medical Data Gateway", "Pricing Calculator", "OCR Pipeline", "KYC Validator", "Underwriting Workflow"]
+  },
+  "root_causes": {
+    "configuration": [
+      "Misconfigured environment variable after deployment",
+      "Incorrect connection string pointing to wrong database instance",
+      "SSL certificate not renewed before expiry date",
+      "Firewall rule inadvertently blocking application port",
+      "Timeout threshold set too low for peak load conditions",
+      "CORS policy not updated for new frontend domain"
+    ],
+    "capacity": [
+      "Database connection pool exhausted under peak load",
+      "Memory utilization exceeded 95% causing OOM kills",
+      "Storage volume reached capacity limit",
+      "API rate limit exceeded by batch processing job",
+      "Thread pool saturation causing request queuing",
+      "Network bandwidth saturated during backup window"
+    ],
+    "code_defect": [
+      "Null pointer exception in updated module after recent release",
+      "Race condition in concurrent transaction processing",
+      "Infinite loop triggered by edge case in input validation",
+      "Memory leak in long-running background service",
+      "Incorrect SQL join causing duplicate records",
+      "Unhandled exception in error recovery path"
+    ],
+    "infrastructure": [
+      "Hardware failure on primary database server",
+      "Network switch port failure causing connectivity loss",
+      "DNS propagation delay after infrastructure change",
+      "Load balancer health check misconfiguration",
+      "Expired TLS certificate on reverse proxy",
+      "ISP link failure at branch office"
+    ],
+    "third_party": [
+      "Upstream API provider experiencing outage",
+      "Cloud service provider regional degradation",
+      "Third-party SSO provider certificate rotation",
+      "External payment gateway intermittent failures",
+      "CDN provider purge affecting cached resources",
+      "Vendor software patch introducing regression"
+    ]
+  },
+  "fix_actions": {
+    "restart": [
+      "Restarted application service and verified health check",
+      "Recycled application pool and confirmed connections restored",
+      "Performed rolling restart of cluster nodes",
+      "Restarted background job scheduler service"
+    ],
+    "configuration": [
+      "Updated configuration file with correct connection parameters",
+      "Applied corrected firewall rule to allow traffic",
+      "Renewed SSL certificate and reloaded web server",
+      "Adjusted timeout threshold from 30s to 120s",
+      "Updated environment variables and redeployed"
+    ],
+    "code_fix": [
+      "Applied hotfix patch for null pointer exception",
+      "Deployed code fix with proper error handling",
+      "Rolled back to previous stable version",
+      "Applied database migration script to correct schema"
+    ],
+    "infrastructure": [
+      "Expanded storage volume by 50% and cleared temporary files",
+      "Increased database connection pool size from 50 to 100",
+      "Replaced failed hardware component and restored from backup",
+      "Updated DNS records and flushed resolver cache",
+      "Reconfigured load balancer health check parameters"
+    ],
+    "access": [
+      "Granted missing role permissions via admin console",
+      "Reset user credentials and cleared account lockout",
+      "Updated group policy and forced GPO refresh",
+      "Regenerated API tokens and updated integration config"
+    ]
+  },
+  "verification_phrases": [
+    "Confirmed service restored and users able to access normally",
+    "Verified successful transaction processing for 30 minutes with no errors",
+    "Monitored system for 1 hour with no recurrence",
+    "User confirmed issue resolved and functionality working as expected",
+    "Ran automated smoke tests — all passed",
+    "Checked monitoring dashboards — all metrics within normal range",
+    "Validated with affected users across multiple locations"
+  ]
+}

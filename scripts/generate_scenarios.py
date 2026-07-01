@@ -1,0 +1,640 @@
+"""
+generate_scenarios.py
+Generates scenario_catalog.json with 100+ insurance IT ticket scenarios across 13 service instances.
+Run: python scripts/generate_scenarios.py
+"""
+
+import json
+from pathlib import Path
+
+SCENARIOS = [
+    # ─── SALESFORCE (10) ───────────────────────────────────────────────────────
+    {"scenario_id":"SC-001","service_instance":"Salesforce","category":"Application Error","incident_type":"incident","priority":"High","impact":"High",
+     "subject_template":"Salesforce SSO login failure for {dept} users",
+     "description_template":"Users in {dept} at {location} unable to log into Salesforce via SSO. Error: {error}. Affects {count} users. Started after {event}. Environment: {env}.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}. User Confirmation: {confirm}",
+     "completion_reason":"solved","avg_resolution_hrs":4.0,"keywords":"salesforce,sso,login,authentication","typical_team":"Salesforce Admin"},
+
+    {"scenario_id":"SC-002","service_instance":"Salesforce","category":"Application Error","incident_type":"incident","priority":"Top","impact":"Top",
+     "subject_template":"Salesforce production down — entire {dept} department blocked",
+     "description_template":"Complete Salesforce outage reported by {dept}. Error: {error}. All {count} users unable to access CRM. Revenue impacting. Started after {event}.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}. User Confirmation: {confirm}",
+     "completion_reason":"solved","avg_resolution_hrs":2.0,"keywords":"salesforce,outage,production,crm","typical_team":"Salesforce Admin"},
+
+    {"scenario_id":"SC-003","service_instance":"Salesforce","category":"Performance","incident_type":"incident","priority":"Medium","impact":"Medium",
+     "subject_template":"Salesforce reports timing out for {dept} team",
+     "description_template":"Users in {dept} report Salesforce custom reports taking over 5 minutes to load or timing out with error {error}. Started after {event}. Browser: {browser}.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":3.0,"keywords":"salesforce,reports,timeout,performance","typical_team":"Salesforce Admin"},
+
+    {"scenario_id":"SC-004","service_instance":"Salesforce","category":"Access/Permission","incident_type":"incident","priority":"High","impact":"High",
+     "subject_template":"Salesforce profile permissions missing for {dept} users after role change",
+     "description_template":"{count} users in {dept} lost access to key Salesforce objects after a recent profile update. Error: {error}. Business process blocked.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":2.5,"keywords":"salesforce,permissions,profile,access","typical_team":"Salesforce Admin"},
+
+    {"scenario_id":"SC-005","service_instance":"Salesforce","category":"Integration Error","incident_type":"incident","priority":"High","impact":"High",
+     "subject_template":"Salesforce-SAP data sync failing — records not updating",
+     "description_template":"Salesforce opportunity records not syncing to SAP. Integration job throwing {error}. Affects {dept} team. Started after {event}. {count} records stuck.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":5.0,"keywords":"salesforce,sap,integration,sync","typical_team":"Salesforce Admin"},
+
+    {"scenario_id":"SC-006","service_instance":"Salesforce","category":"Application Error","incident_type":"incident","priority":"Medium","impact":"Medium",
+     "subject_template":"Salesforce Apex trigger error on Opportunity save in {env}",
+     "description_template":"Users in {dept} getting Apex error {error} when saving Opportunity records in {env}. Affects {count} users. Started after recent deployment.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":3.5,"keywords":"salesforce,apex,trigger,opportunity","typical_team":"Salesforce Admin"},
+
+    {"scenario_id":"SC-007","service_instance":"Salesforce","category":"Data Quality","incident_type":"incident","priority":"Medium","impact":"Medium",
+     "subject_template":"Salesforce duplicate Accounts created during data import in {dept}",
+     "description_template":"Bulk data import for {dept} created {count} duplicate Account records. Duplicate rule not triggering. Error: {error}.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":4.0,"keywords":"salesforce,duplicates,data,import","typical_team":"Salesforce Admin"},
+
+    {"scenario_id":"SC-008","service_instance":"Salesforce","category":"Application Error","incident_type":"incident","priority":"High","impact":"Medium",
+     "subject_template":"Salesforce API request limit exceeded — integrations failing",
+     "description_template":"Salesforce org hitting daily API limit {error}. Multiple integrations failing. Affects {dept} and downstream systems. Started after {event}.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":3.0,"keywords":"salesforce,api,limit,integration","typical_team":"Salesforce Admin"},
+
+    {"scenario_id":"SC-009","service_instance":"Salesforce","category":"Application Error","incident_type":"incident","priority":"Low","impact":"Low",
+     "subject_template":"Salesforce Lightning component throwing JS error for {dept}",
+     "description_template":"Custom Lightning component on Account page throwing console error {error}. Affects {count} users in {dept}. Browser: {browser}.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":2.0,"keywords":"salesforce,lightning,component,javascript","typical_team":"Salesforce Admin"},
+
+    {"scenario_id":"SC-010","service_instance":"Salesforce","category":"Application Error","incident_type":"incident","priority":"High","impact":"High",
+     "subject_template":"Salesforce Workflow rule causing infinite loop in {env}",
+     "description_template":"Workflow rule triggered infinite loop — {count} emails sent per minute. Error: {error}. System performance degraded. {dept} impacted.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":2.0,"keywords":"salesforce,workflow,loop,performance","typical_team":"Salesforce Admin"},
+
+    # ─── WSO2 API GATEWAY (8) ──────────────────────────────────────────────────
+    {"scenario_id":"SC-011","service_instance":"WSO2 API Gateway","category":"Application Error","incident_type":"incident","priority":"Top","impact":"Top",
+     "subject_template":"WSO2 API Gateway 502 Bad Gateway — all APIs unreachable in {env}",
+     "description_template":"All APIs behind WSO2 returning 502. Error: {error}. Multiple downstream systems affected. Production impacting. Started after {event}. {dept} blocked.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":1.5,"keywords":"wso2,api,gateway,502,outage","typical_team":"API Gateway Team"},
+
+    {"scenario_id":"SC-012","service_instance":"WSO2 API Gateway","category":"Access/Permission","incident_type":"incident","priority":"High","impact":"High",
+     "subject_template":"WSO2 API token expiry causing authentication failures for {dept}",
+     "description_template":"OAuth tokens for {dept} API consumers expiring prematurely. Error: {error}. {count} API calls failing per hour. Started after {event}.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":3.0,"keywords":"wso2,oauth,token,authentication","typical_team":"API Gateway Team"},
+
+    {"scenario_id":"SC-013","service_instance":"WSO2 API Gateway","category":"Performance","incident_type":"incident","priority":"High","impact":"High",
+     "subject_template":"WSO2 API throttling blocking {dept} integration traffic",
+     "description_template":"Throttle limit {error} triggered on {dept} API subscription. {count} requests/min being rejected. Business integration breaking.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":2.0,"keywords":"wso2,throttling,rate-limit,api","typical_team":"API Gateway Team"},
+
+    {"scenario_id":"SC-014","service_instance":"WSO2 API Gateway","category":"Application Error","incident_type":"incident","priority":"High","impact":"High",
+     "subject_template":"WSO2 SSL certificate expired — HTTPS connections failing",
+     "description_template":"SSL certificate for WSO2 API Gateway expired. Error: {error}. All HTTPS API calls failing. Affects {count} integrations.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":2.0,"keywords":"wso2,ssl,certificate,expired,https","typical_team":"API Gateway Team"},
+
+    {"scenario_id":"SC-015","service_instance":"WSO2 API Gateway","category":"Application Error","incident_type":"incident","priority":"Medium","impact":"Medium",
+     "subject_template":"WSO2 CORS policy blocking {dept} frontend API calls",
+     "description_template":"Browser-based application for {dept} getting CORS error {error} when calling WSO2-hosted APIs. Affects {count} users. Browser: {browser}.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":2.5,"keywords":"wso2,cors,policy,browser","typical_team":"API Gateway Team"},
+
+    {"scenario_id":"SC-016","service_instance":"WSO2 API Gateway","category":"Application Error","incident_type":"incident","priority":"High","impact":"Medium",
+     "subject_template":"WSO2 mediation sequence error causing message transformation failure",
+     "description_template":"Custom mediation sequence in WSO2 throwing error {error}. Message transformation failing for {dept} API. {count} transactions affected per hour.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":5.0,"keywords":"wso2,mediation,transformation,sequence","typical_team":"API Gateway Team"},
+
+    {"scenario_id":"SC-017","service_instance":"WSO2 API Gateway","category":"Application Error","incident_type":"incident","priority":"High","impact":"High",
+     "subject_template":"WSO2 JWT validation failing for {dept} mobile app integration",
+     "description_template":"Mobile app JWT tokens rejected by WSO2 with error {error}. {dept} mobile users unable to authenticate. {count} users affected.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":3.5,"keywords":"wso2,jwt,validation,mobile,authentication","typical_team":"API Gateway Team"},
+
+    {"scenario_id":"SC-018","service_instance":"WSO2 API Gateway","category":"Application Error","incident_type":"incident","priority":"High","impact":"High",
+     "subject_template":"WSO2 load balancer endpoint health check failures",
+     "description_template":"WSO2 gateway cluster nodes failing health checks. Error: {error}. Load balancer removing nodes from pool. Degraded capacity.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":2.5,"keywords":"wso2,load-balancer,health-check,cluster","typical_team":"API Gateway Team"},
+
+    # ─── GUIDEWIRE CLAIMCENTER (8) ─────────────────────────────────────────────
+    {"scenario_id":"SC-019","service_instance":"Guidewire ClaimCenter","category":"Application Error","incident_type":"incident","priority":"High","impact":"High",
+     "subject_template":"ClaimCenter claim intake workflow error blocking {dept} claim entry",
+     "description_template":"New claim submission failing with error {error}. {dept} team unable to enter new claims. {count} claims queued manually.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":3.0,"keywords":"guidewire,claimcenter,claim,intake,workflow","typical_team":"Claims Platform"},
+
+    {"scenario_id":"SC-020","service_instance":"Guidewire ClaimCenter","category":"Application Error","incident_type":"incident","priority":"Top","impact":"Top",
+     "subject_template":"ClaimCenter batch job failure — overnight payment processing stopped",
+     "description_template":"Overnight payment batch job failed with error {error}. {count} payments not processed. SLA at risk. Affects {dept}.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":2.0,"keywords":"guidewire,claimcenter,batch,payment,processing","typical_team":"Claims Platform"},
+
+    {"scenario_id":"SC-021","service_instance":"Guidewire ClaimCenter","category":"Integration Error","incident_type":"incident","priority":"High","impact":"High",
+     "subject_template":"ClaimCenter-PolicyCenter integration timeout — policy lookup failing",
+     "description_template":"ClaimCenter unable to retrieve policy details from PolicyCenter. Integration error: {error}. Claim assignment blocked for {dept}. {count} claims affected.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":4.0,"keywords":"guidewire,claimcenter,policycenter,integration,timeout","typical_team":"Claims Platform"},
+
+    {"scenario_id":"SC-022","service_instance":"Guidewire ClaimCenter","category":"Application Error","incident_type":"incident","priority":"High","impact":"Medium",
+     "subject_template":"ClaimCenter document generation service failing for {dept}",
+     "description_template":"Claim correspondence documents not generating. Error: {error}. {dept} unable to send letters to claimants. {count} documents queued.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":3.5,"keywords":"guidewire,claimcenter,document,generation","typical_team":"Claims Platform"},
+
+    {"scenario_id":"SC-023","service_instance":"Guidewire ClaimCenter","category":"Application Error","incident_type":"incident","priority":"High","impact":"High",
+     "subject_template":"ClaimCenter payment processing error — vendor payments not releasing",
+     "description_template":"Vendor payment transactions failing with {error}. {count} payments stuck in pending. {dept} vendor relationships at risk.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":3.0,"keywords":"guidewire,claimcenter,payment,vendor","typical_team":"Claims Platform"},
+
+    {"scenario_id":"SC-024","service_instance":"Guidewire ClaimCenter","category":"Application Error","incident_type":"incident","priority":"Medium","impact":"Medium",
+     "subject_template":"ClaimCenter assignment rule not routing claims to correct {dept} team",
+     "description_template":"New claims being assigned to wrong team. Assignment rule error: {error}. {dept} receiving unrelated claims. {count} misrouted today.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":3.0,"keywords":"guidewire,claimcenter,assignment,routing","typical_team":"Claims Platform"},
+
+    {"scenario_id":"SC-025","service_instance":"Guidewire ClaimCenter","category":"Performance","incident_type":"incident","priority":"Medium","impact":"Medium",
+     "subject_template":"ClaimCenter performance degradation — screens loading slowly for {dept}",
+     "description_template":"ClaimCenter UI response times exceeding 30 seconds. {dept} productivity impacted. {count} users affected. No errors but severe slowness.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":4.0,"keywords":"guidewire,claimcenter,performance,slow","typical_team":"Claims Platform"},
+
+    {"scenario_id":"SC-026","service_instance":"Guidewire ClaimCenter","category":"Access/Permission","incident_type":"incident","priority":"Medium","impact":"Medium",
+     "subject_template":"ClaimCenter user roles not syncing from Active Directory for {dept}",
+     "description_template":"{count} new {dept} users missing ClaimCenter role assignments after AD sync. Cannot access claims. Error: {error}.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":2.5,"keywords":"guidewire,claimcenter,roles,active-directory,sync","typical_team":"Claims Platform"},
+
+    # ─── GUIDEWIRE POLICYCENTER (8) ────────────────────────────────────────────
+    {"scenario_id":"SC-027","service_instance":"Guidewire PolicyCenter","category":"Application Error","incident_type":"incident","priority":"High","impact":"High",
+     "subject_template":"PolicyCenter policy binding error — new policies cannot be issued in {env}",
+     "description_template":"Policy binding step failing with {error}. {dept} unable to issue new policies. Revenue impact. {count} policies in queue.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":3.0,"keywords":"guidewire,policycenter,binding,policy,issue","typical_team":"Policy Platform"},
+
+    {"scenario_id":"SC-028","service_instance":"Guidewire PolicyCenter","category":"Application Error","incident_type":"incident","priority":"Top","impact":"Top",
+     "subject_template":"PolicyCenter rating engine down — all quotes failing for {dept}",
+     "description_template":"Rating engine throwing {error}. All new quotes failing. {dept} agents unable to quote. Major revenue impact.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":2.0,"keywords":"guidewire,policycenter,rating,engine,quote","typical_team":"Policy Platform"},
+
+    {"scenario_id":"SC-029","service_instance":"Guidewire PolicyCenter","category":"Application Error","incident_type":"incident","priority":"High","impact":"High",
+     "subject_template":"PolicyCenter premium calculation discrepancy reported by {dept}",
+     "description_template":"Premiums being calculated incorrectly. {dept} underwriters identified {error} in rating. {count} policies affected.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":6.0,"keywords":"guidewire,policycenter,premium,calculation,rating","typical_team":"Policy Platform"},
+
+    {"scenario_id":"SC-030","service_instance":"Guidewire PolicyCenter","category":"Application Error","incident_type":"incident","priority":"High","impact":"Medium",
+     "subject_template":"PolicyCenter endorsement processing stuck for {dept} team",
+     "description_template":"Mid-term endorsements stuck in pending status. Error: {error}. {dept} unable to process {count} endorsements. Customer calls escalating.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":3.0,"keywords":"guidewire,policycenter,endorsement,processing","typical_team":"Policy Platform"},
+
+    {"scenario_id":"SC-031","service_instance":"Guidewire PolicyCenter","category":"Application Error","incident_type":"incident","priority":"High","impact":"High",
+     "subject_template":"PolicyCenter renewal batch failing — {count} policies not renewed",
+     "description_template":"Automated renewal batch exited with error {error}. {count} policies expiring without renewal. {dept} and compliance teams alerted.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":4.0,"keywords":"guidewire,policycenter,renewal,batch","typical_team":"Policy Platform"},
+
+    {"scenario_id":"SC-032","service_instance":"Guidewire PolicyCenter","category":"Application Error","incident_type":"incident","priority":"Medium","impact":"Medium",
+     "subject_template":"PolicyCenter underwriting rule blocking valid submissions for {dept}",
+     "description_template":"Underwriting rule incorrectly rejecting valid policy submissions. Error: {error}. {dept} agents unable to submit {count} quotes.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":4.0,"keywords":"guidewire,policycenter,underwriting,rule","typical_team":"Policy Platform"},
+
+    {"scenario_id":"SC-033","service_instance":"Guidewire PolicyCenter","category":"Performance","incident_type":"incident","priority":"Medium","impact":"Medium",
+     "subject_template":"PolicyCenter search slow — policy lookup taking over 30 seconds for {dept}",
+     "description_template":"Policy search response time degraded to 30+ seconds. {dept} agents frustrated. {count} users impacted. No errors but workflow slowed.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":3.5,"keywords":"guidewire,policycenter,performance,search","typical_team":"Policy Platform"},
+
+    {"scenario_id":"SC-034","service_instance":"Guidewire PolicyCenter","category":"Application Error","incident_type":"incident","priority":"High","impact":"High",
+     "subject_template":"PolicyCenter submission workflow stuck — new business not progressing for {dept}",
+     "description_template":"New policy submissions stuck at validation step. Error: {error}. {dept} agents unable to move {count} submissions to underwriting.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":3.0,"keywords":"guidewire,policycenter,submission,workflow","typical_team":"Policy Platform"},
+
+    # ─── DUCK CREEK (6) ────────────────────────────────────────────────────────
+    {"scenario_id":"SC-035","service_instance":"Duck Creek","category":"Application Error","incident_type":"incident","priority":"High","impact":"High",
+     "subject_template":"Duck Creek policy admin error blocking new policy creation for {dept}",
+     "description_template":"Policy creation in Duck Creek failing with {error}. {dept} agents unable to issue {count} new policies. Revenue impact.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":3.0,"keywords":"duck-creek,policy,admin,creation","typical_team":"Duck Creek Engineering"},
+
+    {"scenario_id":"SC-036","service_instance":"Duck Creek","category":"Integration Error","incident_type":"incident","priority":"High","impact":"High",
+     "subject_template":"Duck Creek billing integration failing — invoices not generating",
+     "description_template":"Duck Creek billing engine not generating invoices. Integration error: {error}. {count} invoices overdue. Finance team alerted.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":4.0,"keywords":"duck-creek,billing,integration,invoice","typical_team":"Duck Creek Engineering"},
+
+    {"scenario_id":"SC-037","service_instance":"Duck Creek","category":"Application Error","incident_type":"incident","priority":"High","impact":"High",
+     "subject_template":"Duck Creek premium calculation errors for {dept} product line",
+     "description_template":"Premiums calculated incorrectly for {count} quotes. Error: {error}. {dept} underwriters identified discrepancy. Financial impact.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":5.0,"keywords":"duck-creek,premium,calculation,rating","typical_team":"Duck Creek Engineering"},
+
+    {"scenario_id":"SC-038","service_instance":"Duck Creek","category":"Application Error","incident_type":"incident","priority":"High","impact":"Medium",
+     "subject_template":"Duck Creek endorsement workflow stuck for {dept} policy changes",
+     "description_template":"Policy endorsements stuck at approval step. Error: {error}. {count} endorsements pending. {dept} customers unable to make policy changes.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":3.0,"keywords":"duck-creek,endorsement,workflow,approval","typical_team":"Duck Creek Engineering"},
+
+    {"scenario_id":"SC-039","service_instance":"Duck Creek","category":"Application Error","incident_type":"incident","priority":"High","impact":"High",
+     "subject_template":"Duck Creek batch processing failure — nightly jobs not completing",
+     "description_template":"Nightly batch jobs exiting with {error}. {count} transactions not processed. {dept} data out of sync. Financial reconciliation impacted.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":3.0,"keywords":"duck-creek,batch,nightly,processing","typical_team":"Duck Creek Engineering"},
+
+    {"scenario_id":"SC-040","service_instance":"Duck Creek","category":"Access/Permission","incident_type":"incident","priority":"Medium","impact":"Medium",
+     "subject_template":"Duck Creek producer portal login failing for {dept} agents",
+     "description_template":"{count} agents in {dept} unable to log into Duck Creek producer portal. Error: {error}. Cannot quote or bind.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":2.0,"keywords":"duck-creek,producer,portal,login","typical_team":"Duck Creek Engineering"},
+
+    # ─── SAP ECC/S4HANA (8) ───────────────────────────────────────────────────
+    {"scenario_id":"SC-041","service_instance":"SAP ECC/S4HANA","category":"Application Error","incident_type":"incident","priority":"High","impact":"High",
+     "subject_template":"SAP transaction lock (SM12) blocking {dept} financial posting",
+     "description_template":"Multiple lock entries in SM12 blocking {dept} from posting transactions. Error: {error}. {count} users affected. Month-end processing at risk.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":2.0,"keywords":"sap,sm12,lock,transaction,financial","typical_team":"SAP Basis"},
+
+    {"scenario_id":"SC-042","service_instance":"SAP ECC/S4HANA","category":"Application Error","incident_type":"incident","priority":"High","impact":"High",
+     "subject_template":"SAP ABAP dump occurring during {dept} period-end processing",
+     "description_template":"ABAP short dump {error} occurring during period-end batch jobs. {dept} processing halted. {count} jobs affected.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":4.0,"keywords":"sap,abap,dump,period-end,batch","typical_team":"SAP Basis"},
+
+    {"scenario_id":"SC-043","service_instance":"SAP ECC/S4HANA","category":"Application Error","incident_type":"incident","priority":"High","impact":"High",
+     "subject_template":"SAP batch job failure (SM37) — {dept} nightly jobs not completing",
+     "description_template":"Scheduled batch jobs in SM37 failing with {error}. {count} jobs in red status. {dept} data not updated.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":3.0,"keywords":"sap,sm37,batch,job,overnight","typical_team":"SAP Basis"},
+
+    {"scenario_id":"SC-044","service_instance":"SAP ECC/S4HANA","category":"Access/Permission","incident_type":"incident","priority":"Medium","impact":"Medium",
+     "subject_template":"SAP authorization error blocking {dept} users from transaction",
+     "description_template":"{count} users in {dept} getting authorization error {error} when running transaction. Cannot complete daily activities.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":2.0,"keywords":"sap,authorization,su53,role,access","typical_team":"SAP Basis"},
+
+    {"scenario_id":"SC-045","service_instance":"SAP ECC/S4HANA","category":"Integration Error","incident_type":"incident","priority":"High","impact":"High",
+     "subject_template":"SAP RFC connection failure — {dept} interface not receiving data",
+     "description_template":"RFC connection to external system broken. Error: {error}. {dept} interface stopped. {count} messages queued.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":3.5,"keywords":"sap,rfc,interface,connection","typical_team":"SAP Basis"},
+
+    {"scenario_id":"SC-046","service_instance":"SAP ECC/S4HANA","category":"Application Error","incident_type":"incident","priority":"High","impact":"High",
+     "subject_template":"SAP GL posting error blocking {dept} financial close",
+     "description_template":"Financial postings failing with error {error}. {dept} unable to complete GL close. Period-end deadline at risk. {count} documents pending.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":4.0,"keywords":"sap,gl,posting,financial,close","typical_team":"SAP Basis"},
+
+    {"scenario_id":"SC-047","service_instance":"SAP ECC/S4HANA","category":"Performance","incident_type":"incident","priority":"High","impact":"Medium",
+     "subject_template":"SAP extended memory utilization alert — {env} system at 85% capacity",
+     "description_template":"SAP {env} system memory at 85%. Risk of ABAP dumps. {dept} experiencing slow response. Error threshold alerts firing.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":3.0,"keywords":"sap,memory,performance,capacity","typical_team":"SAP Basis"},
+
+    {"scenario_id":"SC-048","service_instance":"SAP ECC/S4HANA","category":"Application Error","incident_type":"incident","priority":"High","impact":"High",
+     "subject_template":"SAP GUI not launching after Windows update for {dept} users",
+     "description_template":"SAP GUI crashing on startup after OS patch. Error: {error}. {count} users in {dept} unable to access SAP. Production operations blocked.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":2.0,"keywords":"sap,gui,launch,windows,patch","typical_team":"SAP Basis"},
+
+    # ─── MICROSOFT 365 (8) ─────────────────────────────────────────────────────
+    {"scenario_id":"SC-049","service_instance":"Microsoft 365","category":"Application Error","incident_type":"incident","priority":"High","impact":"High",
+     "subject_template":"Outlook email sync failure for {dept} — inbox not updating",
+     "description_template":"{count} users in {dept} reporting Outlook not syncing emails. Error: {error}. Started after {event}. Both desktop and OWA affected.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":3.0,"keywords":"microsoft365,outlook,email,sync","typical_team":"M365 Support"},
+
+    {"scenario_id":"SC-050","service_instance":"Microsoft 365","category":"Application Error","incident_type":"incident","priority":"High","impact":"High",
+     "subject_template":"Microsoft Teams call quality issues affecting {dept} — audio dropping",
+     "description_template":"{count} users in {dept} experiencing Teams call drops and poor audio. Error: {error}. Started after {event}.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":2.5,"keywords":"microsoft365,teams,call,audio,quality","typical_team":"M365 Support"},
+
+    {"scenario_id":"SC-051","service_instance":"Microsoft 365","category":"Access/Permission","incident_type":"incident","priority":"High","impact":"Medium",
+     "subject_template":"SharePoint site permissions broken — {dept} unable to access documents",
+     "description_template":"{count} users in {dept} getting access denied on SharePoint site. Error: {error}. Document sharing broken.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":2.5,"keywords":"microsoft365,sharepoint,permissions,access","typical_team":"M365 Support"},
+
+    {"scenario_id":"SC-052","service_instance":"Microsoft 365","category":"Access/Permission","incident_type":"incident","priority":"High","impact":"High",
+     "subject_template":"Microsoft 365 MFA authentication failure blocking {dept} users",
+     "description_template":"{count} {dept} users unable to complete MFA. Error: {error}. Cannot access M365 apps. Production blocking.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":2.0,"keywords":"microsoft365,mfa,authentication,azure-ad","typical_team":"M365 Support"},
+
+    {"scenario_id":"SC-053","service_instance":"Microsoft 365","category":"Application Error","incident_type":"incident","priority":"Medium","impact":"Medium",
+     "subject_template":"OneDrive sync conflicts for {dept} users — files showing duplicate versions",
+     "description_template":"{dept} users reporting OneDrive file sync conflicts. Error: {error}. Duplicate versions created. {count} files affected.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":2.0,"keywords":"microsoft365,onedrive,sync,conflict","typical_team":"M365 Support"},
+
+    {"scenario_id":"SC-054","service_instance":"Microsoft 365","category":"Application Error","incident_type":"incident","priority":"Medium","impact":"Medium",
+     "subject_template":"Exchange mail flow rule misconfigured — emails bouncing for {dept}",
+     "description_template":"Mail flow rule incorrectly blocking emails for {dept}. Error: {error}. {count} emails bounced. External communication affected.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":2.5,"keywords":"microsoft365,exchange,mailflow,rule","typical_team":"M365 Support"},
+
+    {"scenario_id":"SC-055","service_instance":"Microsoft 365","category":"Integration Error","incident_type":"incident","priority":"High","impact":"High",
+     "subject_template":"Exchange hybrid mail routing broken between on-prem and cloud for {dept}",
+     "description_template":"Emails between on-prem and cloud Exchange not routing. Error: {error}. {count} emails bounced. {dept} internal comms broken.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":4.0,"keywords":"microsoft365,exchange,hybrid,routing","typical_team":"M365 Support"},
+
+    {"scenario_id":"SC-056","service_instance":"Microsoft 365","category":"Application Error","incident_type":"incident","priority":"High","impact":"Medium",
+     "subject_template":"Power Automate flow failing for {dept} approval process",
+     "description_template":"Power Automate flow throwing error {error}. {dept} automated approval process stopped. {count} requests pending manual processing.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":3.0,"keywords":"microsoft365,power-automate,flow,automation","typical_team":"M365 Support"},
+
+    # ─── SERVICENOW (6) ────────────────────────────────────────────────────────
+    {"scenario_id":"SC-057","service_instance":"ServiceNow","category":"Application Error","incident_type":"incident","priority":"High","impact":"High",
+     "subject_template":"ServiceNow workflow rule failure blocking {dept} ITSM processes",
+     "description_template":"Business rule throwing error {error} in ServiceNow. {dept} ITSM workflows not progressing. {count} records stuck.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":3.0,"keywords":"servicenow,workflow,business-rule,itsm","typical_team":"ITSM Platform Support"},
+
+    {"scenario_id":"SC-058","service_instance":"ServiceNow","category":"Integration Error","incident_type":"incident","priority":"High","impact":"High",
+     "subject_template":"ServiceNow MID Server down — integrations not processing for {dept}",
+     "description_template":"MID Server offline. Error: {error}. Discovery, orchestration, and integrations broken for {dept}. {count} jobs queued.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":2.0,"keywords":"servicenow,mid-server,integration,discovery","typical_team":"ITSM Platform Support"},
+
+    {"scenario_id":"SC-059","service_instance":"ServiceNow","category":"Application Error","incident_type":"incident","priority":"High","impact":"High",
+     "subject_template":"ServiceNow SLA miscalculation — tickets breaching incorrectly for {dept}",
+     "description_template":"SLA engine calculating breaches incorrectly. Error: {error}. {count} tickets showing false SLA breach. {dept} management concerned.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":4.0,"keywords":"servicenow,sla,calculation,breach","typical_team":"ITSM Platform Support"},
+
+    {"scenario_id":"SC-060","service_instance":"ServiceNow","category":"Integration Error","incident_type":"incident","priority":"High","impact":"High",
+     "subject_template":"ServiceNow CMDB sync failing — asset data out of date for {dept}",
+     "description_template":"CMDB discovery not syncing asset data. Error: {error}. {dept} CI records stale. {count} assets not updated. Compliance impact.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":4.0,"keywords":"servicenow,cmdb,discovery,sync,assets","typical_team":"ITSM Platform Support"},
+
+    {"scenario_id":"SC-061","service_instance":"ServiceNow","category":"Application Error","incident_type":"incident","priority":"High","impact":"High",
+     "subject_template":"ServiceNow Change Approval workflow stuck for {dept} CAB process",
+     "description_template":"Change requests stuck in approval queue. Error: {error}. CAB members not receiving notifications. {count} changes blocked.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":3.0,"keywords":"servicenow,change,approval,cab,workflow","typical_team":"ITSM Platform Support"},
+
+    {"scenario_id":"SC-062","service_instance":"ServiceNow","category":"Application Error","incident_type":"incident","priority":"High","impact":"Medium",
+     "subject_template":"ServiceNow platform upgrade caused {dept} customizations to break",
+     "description_template":"Post-upgrade custom scripts throwing {error}. {dept} ITSM customizations broken. {count} features non-functional.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":6.0,"keywords":"servicenow,upgrade,customization,script","typical_team":"ITSM Platform Support"},
+
+    # ─── ORACLE EBS (6) ───────────────────────────────────────────────────────
+    {"scenario_id":"SC-063","service_instance":"Oracle EBS","category":"Application Error","incident_type":"incident","priority":"High","impact":"High",
+     "subject_template":"Oracle EBS concurrent program failure — {dept} reports not running",
+     "description_template":"Concurrent manager failing to run programs. Error: {error}. {dept} unable to generate {count} scheduled reports. Period-end impact.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":3.0,"keywords":"oracle-ebs,concurrent,manager,report","typical_team":"ERP Support"},
+
+    {"scenario_id":"SC-064","service_instance":"Oracle EBS","category":"Application Error","incident_type":"incident","priority":"High","impact":"High",
+     "subject_template":"Oracle EBS GL posting error blocking {dept} month-end close",
+     "description_template":"GL transfer program failing with {error}. {dept} unable to post journals. {count} batches pending. Month-end close at risk.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":4.0,"keywords":"oracle-ebs,gl,posting,month-end,journal","typical_team":"ERP Support"},
+
+    {"scenario_id":"SC-065","service_instance":"Oracle EBS","category":"Application Error","incident_type":"incident","priority":"High","impact":"High",
+     "subject_template":"Oracle EBS payroll run failing for {dept} — salary not processed",
+     "description_template":"Payroll concurrent program failing with {error}. {count} employees not processed. {dept} HR and Finance escalating.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":3.0,"keywords":"oracle-ebs,payroll,hr,salary","typical_team":"ERP Support"},
+
+    {"scenario_id":"SC-066","service_instance":"Oracle EBS","category":"Application Error","incident_type":"incident","priority":"High","impact":"Medium",
+     "subject_template":"Oracle EBS AP invoice approval workflow stuck for {dept}",
+     "description_template":"AP invoices stuck in approval workflow. Error: {error}. {count} invoices pending. {dept} payable deadlines at risk.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":3.0,"keywords":"oracle-ebs,ap,invoice,approval,workflow","typical_team":"ERP Support"},
+
+    {"scenario_id":"SC-067","service_instance":"Oracle EBS","category":"Integration Error","incident_type":"incident","priority":"High","impact":"High",
+     "subject_template":"Oracle EBS interface program failing — data not reaching {dept} system",
+     "description_template":"Interface program exiting with error {error}. {count} records stuck. {dept} external system out of sync. Batch recovery needed.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":3.5,"keywords":"oracle-ebs,interface,integration,batch","typical_team":"ERP Support"},
+
+    {"scenario_id":"SC-068","service_instance":"Oracle EBS","category":"Application Error","incident_type":"incident","priority":"High","impact":"High",
+     "subject_template":"Oracle EBS period close error blocking {dept} financial reporting",
+     "description_template":"Period close program failing with {error}. {dept} unable to close fiscal period. {count} sub-ledgers not closed.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":5.0,"keywords":"oracle-ebs,period-close,financial,fiscal","typical_team":"ERP Support"},
+
+    # ─── INFORMATICA/ETL (6) ──────────────────────────────────────────────────
+    {"scenario_id":"SC-069","service_instance":"Informatica/ETL","category":"Application Error","incident_type":"incident","priority":"High","impact":"High",
+     "subject_template":"Informatica job failure — source database connection lost for {dept} pipeline",
+     "description_template":"ETL job failing with {error} — cannot connect to source database. {dept} data pipeline broken. {count} records not loaded.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":3.0,"keywords":"informatica,etl,source,connection,pipeline","typical_team":"Data Integration"},
+
+    {"scenario_id":"SC-070","service_instance":"Informatica/ETL","category":"Application Error","incident_type":"incident","priority":"High","impact":"High",
+     "subject_template":"Informatica target write error — {dept} data warehouse not loading",
+     "description_template":"ETL job failing on target write with {error}. {dept} data warehouse not refreshed. {count} records failed. Downstream reports impacted.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":3.5,"keywords":"informatica,etl,target,warehouse,write","typical_team":"Data Integration"},
+
+    {"scenario_id":"SC-071","service_instance":"Informatica/ETL","category":"Application Error","incident_type":"incident","priority":"Top","impact":"Top",
+     "subject_template":"Informatica Repository Service down — all workflows stopped for {dept}",
+     "description_template":"PowerCenter Repository Service not running. Error: {error}. All ETL workflows inaccessible. {dept} complete data pipeline outage.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":2.0,"keywords":"informatica,repository,service,outage","typical_team":"Data Integration"},
+
+    {"scenario_id":"SC-072","service_instance":"Informatica/ETL","category":"Application Error","incident_type":"incident","priority":"High","impact":"High",
+     "subject_template":"Informatica mapping logic error producing wrong data for {dept} analytics",
+     "description_template":"Transformation logic error {error} generating incorrect values. {dept} analytics data corrupted. {count} records with wrong output.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":6.0,"keywords":"informatica,mapping,transformation,logic","typical_team":"Data Integration"},
+
+    {"scenario_id":"SC-073","service_instance":"Informatica/ETL","category":"Performance","incident_type":"incident","priority":"High","impact":"Medium",
+     "subject_template":"Informatica ETL job performance degradation — {dept} load taking 8+ hours",
+     "description_template":"ETL job runtime increased from 2 to 8+ hours. No errors but severe slowdown. {dept} downstream reports delayed.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":5.0,"keywords":"informatica,performance,slow,etl","typical_team":"Data Integration"},
+
+    {"scenario_id":"SC-074","service_instance":"Informatica/ETL","category":"Application Error","incident_type":"incident","priority":"High","impact":"Medium",
+     "subject_template":"Informatica PowerCenter upgrade breaking {dept} existing mappings",
+     "description_template":"Post-upgrade {count} mappings throwing compatibility error {error}. {dept} ETL jobs broken. Urgent fix or rollback needed.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":8.0,"keywords":"informatica,upgrade,mapping,compatibility","typical_team":"Data Integration"},
+
+    # ─── ACTIVE DIRECTORY/IAM (8) ─────────────────────────────────────────────
+    {"scenario_id":"SC-075","service_instance":"Active Directory/IAM","category":"Application Error","incident_type":"incident","priority":"High","impact":"High",
+     "subject_template":"Active Directory account lockout for multiple {dept} users",
+     "description_template":"{count} users in {dept} at {location} locked out of AD. Error: {error}. Cannot access any corporate systems.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":1.0,"keywords":"active-directory,lockout,iam,account","typical_team":"IAM Security"},
+
+    {"scenario_id":"SC-076","service_instance":"Active Directory/IAM","category":"Application Error","incident_type":"incident","priority":"High","impact":"High",
+     "subject_template":"Password reset self-service failing for {dept} users",
+     "description_template":"SSPR portal throwing error {error}. {count} {dept} users unable to reset passwords self-service. Help desk overwhelmed.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":2.0,"keywords":"active-directory,password,reset,sspr","typical_team":"IAM Security"},
+
+    {"scenario_id":"SC-077","service_instance":"Active Directory/IAM","category":"Application Error","incident_type":"incident","priority":"Top","impact":"Top",
+     "subject_template":"Active Directory replication failure between DCs — authentication breaking",
+     "description_template":"AD replication error {error} between domain controllers. Authentication failures spreading across {count} sites. Production-wide impact.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":2.0,"keywords":"active-directory,replication,domain-controller,authentication","typical_team":"IAM Security"},
+
+    {"scenario_id":"SC-078","service_instance":"Active Directory/IAM","category":"Application Error","incident_type":"incident","priority":"High","impact":"High",
+     "subject_template":"Service account password expiry breaking {dept} application integrations",
+     "description_template":"Service account expired causing application auth failures. Error: {error}. {count} integrations broken. {dept} operations impacted.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":1.5,"keywords":"active-directory,service-account,password,expiry","typical_team":"IAM Security"},
+
+    {"scenario_id":"SC-079","service_instance":"Active Directory/IAM","category":"Application Error","incident_type":"incident","priority":"High","impact":"High",
+     "subject_template":"LDAP connectivity issue — {dept} applications cannot authenticate users",
+     "description_template":"LDAP bind failing with {error}. Applications using AD authentication broken. {dept} users cannot log in. {count} affected.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":2.0,"keywords":"active-directory,ldap,authentication,application","typical_team":"IAM Security"},
+
+    {"scenario_id":"SC-080","service_instance":"Active Directory/IAM","category":"Application Error","incident_type":"incident","priority":"High","impact":"High",
+     "subject_template":"SSO failure — {dept} users unable to access SAML-integrated applications",
+     "description_template":"SAML SSO authentication failing with {error}. {dept} users unable to access integrated apps. {count} affected.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":2.5,"keywords":"active-directory,sso,saml,authentication","typical_team":"IAM Security"},
+
+    {"scenario_id":"SC-081","service_instance":"Active Directory/IAM","category":"Integration Error","incident_type":"incident","priority":"High","impact":"Medium",
+     "subject_template":"Azure AD Connect sync error — cloud users out of sync for {dept}",
+     "description_template":"Azure AD Connect delta sync failing with {error}. {dept} cloud user attributes not updating. {count} users affected.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":3.0,"keywords":"active-directory,azure-ad,connect,sync","typical_team":"IAM Security"},
+
+    {"scenario_id":"SC-082","service_instance":"Active Directory/IAM","category":"Application Error","incident_type":"incident","priority":"Medium","impact":"Low",
+     "subject_template":"Account deprovisioning delayed for {dept} leavers — security risk",
+     "description_template":"{count} leaver accounts in {dept} still active past offboarding date. Error: {error}. Security audit finding.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":1.0,"keywords":"active-directory,deprovisioning,leaver,security","typical_team":"IAM Security"},
+
+    # ─── NETWORK/INFRASTRUCTURE (8) ───────────────────────────────────────────
+    {"scenario_id":"SC-083","service_instance":"Network/Infrastructure","category":"Application Error","incident_type":"incident","priority":"High","impact":"High",
+     "subject_template":"VPN connectivity failure for remote {dept} users — cannot access systems",
+     "description_template":"{count} remote {dept} users unable to connect via VPN. Error: {error}. All remote access blocked. Location: {location}.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":2.0,"keywords":"network,vpn,remote-access,connectivity","typical_team":"Network Engineering"},
+
+    {"scenario_id":"SC-084","service_instance":"Network/Infrastructure","category":"Application Error","incident_type":"incident","priority":"Top","impact":"Top",
+     "subject_template":"DNS resolution failure — {dept} applications unreachable across all sites",
+     "description_template":"DNS resolution failing org-wide. Error: {error}. All application URLs unreachable. {count} users affected across multiple sites.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":1.0,"keywords":"network,dns,resolution,outage","typical_team":"Network Engineering"},
+
+    {"scenario_id":"SC-085","service_instance":"Network/Infrastructure","category":"Application Error","incident_type":"incident","priority":"High","impact":"High",
+     "subject_template":"Firewall rule blocking {dept} application traffic after change",
+     "description_template":"New firewall rule inadvertently blocking {dept} application traffic. Error: {error}. {count} users affected.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":1.5,"keywords":"network,firewall,rule,blocking,traffic","typical_team":"Network Engineering"},
+
+    {"scenario_id":"SC-086","service_instance":"Network/Infrastructure","category":"Application Error","incident_type":"incident","priority":"High","impact":"High",
+     "subject_template":"SSL certificate expired on {dept} application load balancer",
+     "description_template":"SSL cert expired on load balancer. Error: {error}. HTTPS connections rejected. {count} users unable to access applications.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":1.5,"keywords":"network,ssl,certificate,expired,load-balancer","typical_team":"Network Engineering"},
+
+    {"scenario_id":"SC-087","service_instance":"Network/Infrastructure","category":"Performance","incident_type":"incident","priority":"High","impact":"High",
+     "subject_template":"WAN link bandwidth saturation causing slowness across {dept} at {location}",
+     "description_template":"WAN link utilization at 95%. Error: {error}. All {dept} users at {location} experiencing severe slowness.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":3.0,"keywords":"network,wan,bandwidth,saturation,performance","typical_team":"Network Engineering"},
+
+    {"scenario_id":"SC-088","service_instance":"Network/Infrastructure","category":"Application Error","incident_type":"incident","priority":"High","impact":"High",
+     "subject_template":"DHCP scope exhausted — new devices cannot get IP addresses at {location}",
+     "description_template":"DHCP scope for {location} subnet exhausted. Error: {error}. New devices not getting IP. {count} devices affected.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":1.5,"keywords":"network,dhcp,ip,scope","typical_team":"Network Engineering"},
+
+    {"scenario_id":"SC-089","service_instance":"Network/Infrastructure","category":"Application Error","incident_type":"incident","priority":"High","impact":"High",
+     "subject_template":"Backup job failure — {dept} critical data not backed up for {count} days",
+     "description_template":"Backup job failing with {error}. {dept} critical data unprotected. DR risk. Compliance concern.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":3.0,"keywords":"network,backup,dr,data-protection","typical_team":"Network Engineering"},
+
+    {"scenario_id":"SC-090","service_instance":"Network/Infrastructure","category":"Application Error","incident_type":"incident","priority":"Top","impact":"Top",
+     "subject_template":"Internet connectivity lost at {location} — all cloud services unreachable",
+     "description_template":"ISP link down at {location}. Error: {error}. All cloud services unreachable. {count} users affected.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":1.5,"keywords":"network,internet,isp,outage,cloud","typical_team":"Network Engineering"},
+
+    # ─── HEAL (10) ─────────────────────────────────────────────────────────────
+    {"scenario_id":"SC-091","service_instance":"HEAL","category":"Application Error","incident_type":"incident","priority":"High","impact":"High",
+     "subject_template":"HEAL risk assessment engine timeout for {dept} underwriting cases",
+     "description_template":"Risk assessment engine timing out for {dept} underwriters. Error: {error}. {count} cases pending risk evaluation. SLA at risk.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":3.0,"keywords":"heal,risk-assessment,underwriting,timeout","typical_team":"HEAL Engineering"},
+
+    {"scenario_id":"SC-092","service_instance":"HEAL","category":"Application Error","incident_type":"incident","priority":"Top","impact":"Top",
+     "subject_template":"HEAL production down — entire underwriting workflow blocked",
+     "description_template":"Complete HEAL application outage. Error: {error}. All {count} underwriters unable to process cases. Revenue and compliance impacting.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":2.0,"keywords":"heal,production,outage,underwriting","typical_team":"HEAL Engineering"},
+
+    {"scenario_id":"SC-093","service_instance":"HEAL","category":"Integration Error","incident_type":"incident","priority":"High","impact":"High",
+     "subject_template":"HEAL medical data gateway integration failing for {dept}",
+     "description_template":"Medical data fetch from external provider failing. Error: {error}. {dept} cannot retrieve {count} medical records. Underwriting decisions delayed.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":4.0,"keywords":"heal,medical,data,gateway,integration","typical_team":"HEAL Engineering"},
+
+    {"scenario_id":"SC-094","service_instance":"HEAL","category":"Application Error","incident_type":"incident","priority":"High","impact":"High",
+     "subject_template":"HEAL policy pricing calculation error affecting {dept} quotes",
+     "description_template":"Pricing calculator returning incorrect premiums. Error: {error}. {count} quotes affected. {dept} underwriters flagging discrepancies.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":5.0,"keywords":"heal,pricing,calculation,premium,quote","typical_team":"HEAL Engineering"},
+
+    {"scenario_id":"SC-095","service_instance":"HEAL","category":"Application Error","incident_type":"incident","priority":"Medium","impact":"Medium",
+     "subject_template":"HEAL document OCR pipeline failing for scanned applications in {dept}",
+     "description_template":"OCR pipeline not processing scanned documents. Error: {error}. {count} applications pending manual data entry. {dept} backlog growing.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":3.0,"keywords":"heal,ocr,document,scanning,pipeline","typical_team":"HEAL Engineering"},
+
+    {"scenario_id":"SC-096","service_instance":"HEAL","category":"Application Error","incident_type":"incident","priority":"High","impact":"High",
+     "subject_template":"HEAL underwriting workflow approval chain broken for {dept}",
+     "description_template":"Approval workflow not routing to next approver. Error: {error}. {count} cases stuck at approval stage. {dept} SLA breach risk.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":3.0,"keywords":"heal,workflow,approval,underwriting","typical_team":"HEAL Engineering"},
+
+    {"scenario_id":"SC-097","service_instance":"HEAL","category":"Application Error","incident_type":"incident","priority":"Medium","impact":"Medium",
+     "subject_template":"HEAL KYC validation errors blocking new policy applications for {dept}",
+     "description_template":"KYC validation returning false rejections. Error: {error}. {count} valid applications rejected. {dept} customer complaints rising.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":3.0,"keywords":"heal,kyc,validation,application","typical_team":"HEAL Engineering"},
+
+    {"scenario_id":"SC-098","service_instance":"HEAL","category":"Application Error","incident_type":"incident","priority":"High","impact":"Medium",
+     "subject_template":"HEAL reinsurance limit check failing for large policies in {dept}",
+     "description_template":"Reinsurance treaty limit validation failing with {error}. {count} large policies pending cession check. {dept} facultative team alerted.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":4.0,"keywords":"heal,reinsurance,limit,cession","typical_team":"HEAL Engineering"},
+
+    {"scenario_id":"SC-099","service_instance":"HEAL","category":"Performance","incident_type":"incident","priority":"Medium","impact":"Medium",
+     "subject_template":"HEAL dashboard performance degradation for {dept} managers",
+     "description_template":"HEAL management dashboard taking over 30 seconds to load. {dept} managers cannot view pipeline metrics. {count} users affected.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":3.0,"keywords":"heal,dashboard,performance,management","typical_team":"HEAL Engineering"},
+
+    {"scenario_id":"SC-100","service_instance":"HEAL","category":"Access/Permission","incident_type":"incident","priority":"Medium","impact":"Medium",
+     "subject_template":"HEAL user role permissions not applied for new {dept} underwriters",
+     "description_template":"{count} new underwriters in {dept} missing HEAL access after onboarding. Error: {error}. Cannot access underwriting module.",
+     "resolution_template":"Root Cause: {root_cause}. Steps: 1. {step1}. 2. {step2}. 3. {step3}. Verification: {verify}.",
+     "completion_reason":"solved","avg_resolution_hrs":2.0,"keywords":"heal,access,permissions,onboarding","typical_team":"HEAL Engineering"},
+]
+
+
+def main():
+    out = Path(__file__).parent / "data" / "scenario_catalog.json"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(json.dumps(SCENARIOS, indent=2, ensure_ascii=False), encoding="utf-8")
+    print(f"Generated {len(SCENARIOS)} scenarios -> {out}")
+
+    from collections import Counter
+    counts = Counter(s["service_instance"] for s in SCENARIOS)
+    for svc, cnt in sorted(counts.items()):
+        print(f"  {svc}: {cnt}")
+    print(f"  TOTAL: {len(SCENARIOS)}")
+
+
+if __name__ == "__main__":
+    main()
